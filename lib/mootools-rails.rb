@@ -1,6 +1,7 @@
 module Mootools
   module Rails
     class Railtie < ::Rails::Railtie
+
       config.before_configuration do
         require "mootools-rails/assert_select_mootools" if ::Rails.env.test?
 
@@ -8,6 +9,7 @@ module Mootools
 
         config.action_view.javascript_expansions[:defaults] = jq_defaults + %w(rails)
       end
+
     end
   end
 end

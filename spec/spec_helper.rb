@@ -1,4 +1,11 @@
-# Setup for generator tests
+# Set up RSpec
+require 'webmock/rspec'
+
+Spec::Runner.configure do |config|
+  config.include WebMock::API
+end
+
+# Set up generator tests
 require 'rails/all'
 require 'rails/generators'
 require 'rails/generators/test_case'
