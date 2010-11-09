@@ -22,7 +22,7 @@ module Mootools
 
       def download_ujs_driver
         say_status("fetching", "MooTools UJS adapter (github HEAD)", :green)
-        get "http://github.com/neonlex/mootools-ujs/raw/master/Source/rails.js", "public/javascripts/rails.js"
+        get "https://github.com/neonlex/mootools-ujs/raw/master/Source/rails.js", "public/javascripts/rails.js"
       end
 
     private
