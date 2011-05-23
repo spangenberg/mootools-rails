@@ -1,8 +1,11 @@
+# Configure Rails 3.1 to have assert_select_mootools
 module Mootools
   module Rails
 
     class Engine < ::Rails::Engine
-      # just a empty engine to ensure our vendors will be added to rails assets pipe
+      config.before_configuration do
+        require "mootools-rails/assert_select_mootools" if ::Rails.env.test?
+      end
     end
 
   end
