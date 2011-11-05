@@ -8,7 +8,7 @@ authors:
 - Kevin Valdek
 
 requires:
-  core/1.3: '*'
+  core/1.4: '*'
 
 provides:
   - Rails 3 MooTools driver
