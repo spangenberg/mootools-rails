@@ -4,7 +4,7 @@ module Mootools
 
     class Railtie < ::Rails::Railtie
       config.before_configuration do
-        require "mootools-rails/assert_select_mootools" if ::Rails.env.test?
+        require "mootools/assert_select" if ::Rails.env.test?
 
         if ::Rails.root.join("public/javascripts/mootools-more.min.js").exist?
           jq_defaults = %w(mootools mootools-more)
@@ -13,7 +13,7 @@ module Mootools
           jq_defaults = ::Rails.env.production? ? %w(mootools.min) : %w(mootools)
         end
 
-        # Merge the MooTools scripts, remove the Prototype defaults and finally add 'rails'
+        # Merge the MooTools scripts, remove the Prototype defaults and finally add 'mootools_ujs'
         # at the end, because load order is important
         config.action_view.javascript_expansions[:defaults] -= PROTOTYPE_JS + ['rails']
         config.action_view.javascript_expansions[:defaults] |= jq_defaults

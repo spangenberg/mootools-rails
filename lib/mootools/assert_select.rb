@@ -20,11 +20,11 @@ module ActionDispatch
       #
       # === Using blocks
       #
-      # Without a block, +assert_select_jquery_ merely asserts that the
+      # Without a block, +assert_select_mootools_ merely asserts that the
       # response contains one or more statements that match the conditions
       # specified above
       #
-      # With a block +assert_select_jquery_ also asserts that the method call
+      # With a block +assert_select_mootools_ also asserts that the method call
       # passes a javascript escaped string containing HTML.  All such HTML
       # fragments are selected and passed to the block.  Nested assertions are
       # supported.
@@ -52,7 +52,7 @@ module ActionDispatch
 
         pattern = "\\.#{mootools_method || '\\w+'}\\("
         pattern = "#{pattern}['\"]#{mootools_opt}['\"],?\\s*" if mootools_opt
-        pattern = "#{pattern}#{PATTERN_HTML}" if block
+        pattern = "#{pattern}#{PATTERN_HTML}"
         pattern = "(?:MooTools|\\$)\\(['\"]#{id}['\"]\\)#{pattern}" if id
 
         fragments = []
@@ -84,6 +84,7 @@ module ActionDispatch
       def unescape_js(js_string)
         # js encodes double quotes and line breaks.
         unescaped= js_string.gsub('\"', '"')
+        unescaped.gsub!('\\\'', "'")
         unescaped.gsub!(/\\\//, '/')
         unescaped.gsub!('\n', "\n")
         unescaped.gsub!('\076', '>')
