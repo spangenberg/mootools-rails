@@ -18,7 +18,7 @@ For Rails 3.1 and greater, the files will be added to the asset pipeline and ava
 
 If you wish to use MooTools More as well, you can add this line to `application.js`:
 
-    //= require mootools-ui
+    //= require mootools-more
 
 ### Installation
 
