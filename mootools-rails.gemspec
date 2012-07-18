@@ -14,8 +14,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "mootools-rails"
 
-  s.add_dependency "railties", "~> 3.0"
+  s.add_dependency "railties", ">= 3.2.0", "< 5.0"
   s.add_dependency "thor",     "~> 0.14"
+  
   s.add_development_dependency "bundler", "~> 1.0.0"
   s.add_development_dependency "rails",   "~> 3.0"
 
