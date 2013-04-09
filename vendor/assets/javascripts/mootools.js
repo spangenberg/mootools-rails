@@ -37,7 +37,7 @@ provides: [Core, MooTools, Type, typeOf, instanceOf, Native]
 
 this.MooTools = {
 	version: '1.4.5',
-	build: '74e34796f5f76640cdb98853004650aea1499d69'
+	build: 'ab8ea8824dc3b24b6666867a2c4ed58ebb762cf0'
 };
 
 // typeOf, instanceOf
@@ -174,7 +174,7 @@ var Type = this.Type = function(name, object){
 			object.prototype.$family = (function(){
 				return lower;
 			}).hide();
-
+			
 		}
 	}
 
@@ -1410,7 +1410,7 @@ this.Events = new Class({
 	addEvent: function(type, fn, internal){
 		type = removeOn(type);
 
-
+		
 
 		this.$events[type] = (this.$events[type] || []).include(fn);
 		if (internal) fn.internal = true;
@@ -3796,16 +3796,17 @@ Element.implement({
 			var color = result.match(/rgba?\([\d\s,]+\)/);
 			if (color) result = result.replace(color[0], color[0].rgbToHex());
 		}
-		if (Browser.ie && isNaN(parseFloat(result))){
-			if ((/^(height|width)$/).test(property)){
+		if (Browser.opera || Browser.ie){
+			if ((/^(height|width)$/).test(property) && !(/px$/.test(result))){
 				var values = (property == 'width') ? ['left', 'right'] : ['top', 'bottom'], size = 0;
 				values.each(function(value){
 					size += this.getStyle('border-' + value + '-width').toInt() + this.getStyle('padding-' + value).toInt();
 				}, this);
 				return this['offset' + property.capitalize()] - size + 'px';
 			}
-			if (Browser.opera && String(result).indexOf('px') != -1) return result;
-			if ((/^border(.+)Width|margin|padding/).test(property)) return '0px';
+			if (Browser.ie && (/^border(.+)Width|margin|padding/).test(property) && isNaN(parseFloat(result))){
+				return '0px';
+			}
 		}
 		return result;
 	},

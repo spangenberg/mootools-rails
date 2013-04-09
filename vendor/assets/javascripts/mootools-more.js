@@ -13370,3 +13370,4 @@ Form.Validator.add('validate-currency-yuan', {
 	}
 
 });
+
