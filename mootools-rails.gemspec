@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
-  spec.require_paths = 'lib'
+  spec.require_paths = ['lib']
 
   spec.add_dependency 'railties', '>= 3.0', '< 5.0'
   spec.add_dependency 'thor',     '>= 0.14', '< 2.0'
