@@ -1,6 +1,16 @@
-// MooTools: the javascript framework.
-// Load this file's selection again by visiting: http://mootools.net/more/065f2f092ece4e3b32bb5214464cf926 
-// Or build this file again with packager using: packager build More/More More/Events.Pseudos More/Class.Refactor More/Class.Binds More/Class.Occlude More/Chain.Wait More/Array.Extras More/Date More/Date.Extras More/Number.Format More/Object.Extras More/String.Extras More/String.QueryString More/URI More/URI.Relative More/Hash More/Hash.Extras More/Element.Forms More/Elements.From More/Element.Event.Pseudos More/Element.Event.Pseudos.Keys More/Element.Measure More/Element.Pin More/Element.Position More/Element.Shortcuts More/Form.Request More/Form.Request.Append More/Form.Validator More/Form.Validator.Inline More/Form.Validator.Extras More/OverText More/Fx.Elements More/Fx.Accordion More/Fx.Move More/Fx.Reveal More/Fx.Scroll More/Fx.Slide More/Fx.SmoothScroll More/Fx.Sort More/Drag More/Drag.Move More/Slider More/Sortables More/Request.JSONP More/Request.Queue More/Request.Periodical More/Assets More/Color More/Group More/Hash.Cookie More/IframeShim More/Table More/HtmlTable More/HtmlTable.Zebra More/HtmlTable.Sort More/HtmlTable.Select More/Keyboard More/Keyboard.Extras More/Mask More/Scroller More/Tips More/Spinner More/Locale More/Locale.Set.From More/Locale.en-US.Date More/Locale.en-US.Form.Validator More/Locale.en-US.Number More/Locale.ar.Date More/Locale.ar.Form.Validator More/Locale.ca-CA.Date More/Locale.ca-CA.Form.Validator More/Locale.cs-CZ.Date More/Locale.cs-CZ.Form.Validator More/Locale.da-DK.Date More/Locale.da-DK.Form.Validator More/Locale.de-CH.Date More/Locale.de-CH.Form.Validator More/Locale.de-DE.Date More/Locale.de-DE.Form.Validator More/Locale.de-DE.Number More/Locale.en-GB.Date More/Locale.es-AR.Date More/Locale.es-AR.Form.Validator More/Locale.es-ES.Date More/Locale.es-ES.Form.Validator More/Locale.et-EE.Date More/Locale.et-EE.Form.Validator More/Locale.EU.Number More/Locale.fa.Date More/Locale.fa.Form.Validator More/Locale.fi-FI.Date More/Locale.fi-FI.Form.Validator More/Locale.fi-FI.Number More/Locale.fr-FR.Date More/Locale.fr-FR.Form.Validator More/Locale.fr-FR.Number More/Locale.he-IL.Date More/Locale.he-IL.Form.Validator More/Locale.he-IL.Number More/Locale.hu-HU.Date More/Locale.hu-HU.Form.Validator More/Locale.it-IT.Date More/Locale.it-IT.Form.Validator More/Locale.ja-JP.Date More/Locale.ja-JP.Form.Validator More/Locale.ja-JP.Number More/Locale.nl-NL.Date More/Locale.nl-NL.Form.Validator More/Locale.nl-NL.Number More/Locale.no-NO.Date More/Locale.no-NO.Form.Validator More/Locale.pl-PL.Date More/Locale.pl-PL.Form.Validator More/Locale.pt-BR.Date More/Locale.pt-BR.Form.Validator More/Locale.pt-PT.Date More/Locale.pt-PT.Form.Validator More/Locale.ru-RU-unicode.Date More/Locale.ru-RU-unicode.Form.Validator More/Locale.si-SI.Date More/Locale.si-SI.Form.Validator More/Locale.sv-SE.Date More/Locale.sv-SE.Form.Validator More/Locale.uk-UA.Date More/Locale.uk-UA.Form.Validator More/Locale.zh-CH.Date More/Locale.zh-CH.Form.Validator
+/*
+---
+MooTools: the javascript framework
+
+web build:
+ - http://mootools.net/more/877c0d0b09d180fec4672fb62259cf93
+
+packager build:
+ - packager build More/More More/Events.Pseudos More/Class.Refactor More/Class.Binds More/Class.Occlude More/Chain.Wait More/Array.Extras More/Date More/Date.Extras More/Number.Format More/Object.Extras More/String.Extras More/String.QueryString More/URI More/URI.Relative More/Hash More/Hash.Extras More/Element.Forms More/Elements.From More/Element.Event.Pseudos More/Element.Event.Pseudos.Keys More/Element.Measure More/Element.Pin More/Element.Position More/Element.Shortcuts More/Form.Request More/Form.Request.Append More/Form.Validator More/Form.Validator.Inline More/Form.Validator.Extras More/OverText More/Fx.Elements More/Fx.Accordion More/Fx.Move More/Fx.Reveal More/Fx.Scroll More/Fx.Slide More/Fx.SmoothScroll More/Fx.Sort More/Drag More/Drag.Move More/Slider More/Sortables More/Request.JSONP More/Request.Queue More/Request.Periodical More/Assets More/Color More/Group More/Hash.Cookie More/IframeShim More/Table More/Swiff More/HtmlTable More/HtmlTable.Zebra More/HtmlTable.Sort More/HtmlTable.Select More/Keyboard More/Keyboard.Extras More/Mask More/Scroller More/Tips More/Spinner More/Locale More/Locale.Set.From More/Locale.en-GB.Date More/Locale.en-US.Date More/Locale.en-US.Form.Validator More/Locale.en-US.Number More/Locale.af-ZA.Date More/Locale.af-ZA.Form.Validator More/Locale.af-ZA.Number More/Locale.ar.Date More/Locale.ar.Form.Validator More/Locale.ca-CA.Date More/Locale.ca-CA.Form.Validator More/Locale.cs-CZ.Date More/Locale.cs-CZ.Form.Validator More/Locale.da-DK.Date More/Locale.da-DK.Form.Validator More/Locale.de-CH.Date More/Locale.de-CH.Form.Validator More/Locale.de-DE.Date More/Locale.de-DE.Form.Validator More/Locale.de-DE.Number More/Locale.el-GR.Date More/Locale.es-AR.Date More/Locale.es-AR.Form.Validator More/Locale.es-ES.Date More/Locale.es-ES.Form.Validator More/Locale.es-VE.Date More/Locale.es-VE.Form.Validator More/Locale.es-VE.Number More/Locale.et-EE.Date More/Locale.et-EE.Form.Validator More/Locale.EU.Number More/Locale.fa.Date More/Locale.fa.Form.Validator More/Locale.fi-FI.Date More/Locale.fi-FI.Form.Validator More/Locale.fi-FI.Number More/Locale.fr-FR.Date More/Locale.fr-FR.Form.Validator More/Locale.fr-FR.Number More/Locale.he-IL.Date More/Locale.he-IL.Form.Validator More/Locale.he-IL.Number More/Locale.hu-HU.Date More/Locale.hu-HU.Form.Validator More/Locale.it-IT.Date More/Locale.it-IT.Form.Validator More/Locale.ja-JP.Date More/Locale.ja-JP.Form.Validator More/Locale.ja-JP.Number More/Locale.nl-NL.Date More/Locale.nl-NL.Form.Validator More/Locale.nl-NL.Number More/Locale.no-NO.Date More/Locale.no-NO.Form.Validator More/Locale.pl-PL.Date More/Locale.pl-PL.Form.Validator More/Locale.pt-BR.Date More/Locale.pt-BR.Form.Validator More/Locale.pt-BR.Number More/Locale.pt-PT.Date More/Locale.pt-PT.Form.Validator More/Locale.ru-RU-unicode.Date More/Locale.ru-RU-unicode.Form.Validator More/Locale.sk-SK.Date More/Locale.sk-SK.Form.Validator More/Locale.si-SI.Date More/Locale.si-SI.Form.Validator More/Locale.sv-SE.Date More/Locale.sv-SE.Form.Validator More/Locale.sv-SE.Number More/Locale.tr-TR.Date More/Locale.tr-TR.Form.Validator More/Locale.tr-TR.Number More/Locale.uk-UA.Date More/Locale.uk-UA.Form.Validator More/Locale.ZA.Number More/Locale.zh-CH.Date More/Locale.zh-CH.Form.Validator More/Locale.zh-CH.Number More/Locale.el-GR.Form.Validator
+
+...
+*/
+
 /*
 ---
 
@@ -31,8 +41,8 @@ provides: [MooTools.More]
 */
 
 MooTools.More = {
-	'version': '1.4.0.1',
-	'build': 'a4244edf2aa97ac8a196fc96082dd35af1abab87'
+	version: '1.5.0',
+	build: '73db5e24e6e9c5c87b3a27aebef2248053f7db37'
 };
 
 
@@ -48,7 +58,7 @@ license: MIT-style license
 authors:
   - Arian Stolwijk
 
-requires: [Core/Class.Extras, Core/Slick.Parser, More/MooTools.More]
+requires: [Core/Class.Extras, Core/Slick.Parser, MooTools.More]
 
 provides: [Events.Pseudos]
 
@@ -211,7 +221,7 @@ authors:
 
 requires:
   - Core/Class
-  - /MooTools.More
+  - MooTools.More
 
 # Some modules declare themselves dependent on Class.Refactor
 provides: [Class.refactor, Class.Refactor]
@@ -254,7 +264,7 @@ authors:
 
 requires:
   - Core/Class
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Class.Binds]
 
@@ -294,7 +304,7 @@ authors:
 requires:
   - Core/Class
   - Core/Element
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Class.Occlude]
 
@@ -335,7 +345,7 @@ requires:
   - Core/Chain
   - Core/Element
   - Core/Fx
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Chain.Wait]
 
@@ -425,7 +435,9 @@ Array.implement({
 	sum: function(){
 		var result = 0, l = this.length;
 		if (l){
-			while (l--) result += this[l];
+			while (l--){
+				if (this[l] != null) result += parseFloat(this[l]);
+			}
 		}
 		return result;
 	},
@@ -456,6 +468,12 @@ Array.implement({
 			if (i in this) value = value === nil ? this[i] : fn.call(null, value, this[i], i, this);
 		}
 		return value;
+	},
+
+	pluck: function(prop){
+		return this.map(function(item){
+			return item[prop];
+		});
 	}
 
 });
@@ -479,7 +497,7 @@ authors:
 
 requires:
   - Core/Object
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Object.Extras]
 
@@ -548,8 +566,8 @@ authors:
 
 requires:
   - Core/Events
-  - /Object.Extras
-  - /MooTools.More
+  - Object.Extras
+  - MooTools.More
 
 provides: [Locale, Lang]
 
@@ -712,7 +730,7 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.en-US.Date]
 
@@ -1347,7 +1365,7 @@ authors:
   - Scott Kyle
 
 requires:
-  - /Date
+  - Date
 
 provides: [Date.Extras]
 
@@ -1463,7 +1481,7 @@ authors:
   - Arian Stolwijk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.en-US.Number]
 
@@ -1665,10 +1683,8 @@ var special = {
 	'S': /[ŠŞŚ]/g,
 	't': /[ťţ]/g,
 	'T': /[ŤŢ]/g,
-	'ue': /[ü]/g,
-	'UE': /[Ü]/g,
-	'u': /[ùúûůµ]/g,
-	'U': /[ÙÚÛŮ]/g,
+	'u': /[ùúûůüµ]/g,
+	'U': /[ÙÚÛŮÜ]/g,
 	'y': /[ÿý]/g,
 	'Y': /[ŸÝ]/g,
 	'z': /[žźż]/g,
@@ -1693,7 +1709,16 @@ tidy = {
 	'-': /[\u2013]/g,
 //	'--': /[\u2014]/g,
 	'&raquo;': /[\uFFFD]/g
-};
+},
+
+conversions = {
+	ms: 1,
+	s: 1000,
+	m: 6e4,
+	h: 36e5
+},
+
+findUnits = /(\d*.?\d+)([msh]+)/;
 
 var walk = function(string, replacements){
 	var result = string, key;
@@ -1755,6 +1780,13 @@ String.implement({
 			if (trail) string += trail;
 		}
 		return string;
+	},
+
+	ms: function(){
+	  // "Borrowed" from https://gist.github.com/1503944
+		var units = findUnits.exec(this);
+		if (units == null) return Number(this);
+		return Number(units[1]) * conversions[units[2]];
 	}
 
 });
@@ -1782,7 +1814,7 @@ authors:
 requires:
   - Core/Array
   - Core/String
-  - /MooTools.More
+  - MooTools.More
 
 provides: [String.QueryString]
 
@@ -1852,7 +1884,7 @@ requires:
   - Core/Class
   - Core/Class.Extras
   - Core/Element
-  - /String.QueryString
+  - String.QueryString
 
 provides: [URI]
 
@@ -1970,7 +2002,7 @@ var URI = this.URI = new Class({
 			data[arguments[0]] = arguments[1];
 			values = data;
 		} else if (merge){
-			values = Object.merge(this.getData(), values);
+			values = Object.merge(this.getData(null, part), values);
 		}
 		return this.set(part || 'query', Object.toQueryString(values));
 	},
@@ -2019,8 +2051,8 @@ authors:
 
 
 requires:
-  - /Class.refactor
-  - /URI
+  - Class.refactor
+  - URI
 
 provides: [URI.Relative]
 
@@ -2073,7 +2105,7 @@ license: MIT-style license.
 
 requires:
   - Core/Object
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Hash]
 
@@ -2224,8 +2256,8 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Hash
-  - /Object.Extras
+  - Hash
+  - Object.Extras
 
 provides: [Hash.Extras]
 
@@ -2265,8 +2297,8 @@ authors:
 
 requires:
   - Core/Element
-  - /String.Extras
-  - /MooTools.More
+  - String.Extras
+  - MooTools.More
 
 provides: [Element.Forms]
 
@@ -2408,7 +2440,7 @@ authors:
 requires:
   - Core/String
   - Core/Element
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Elements.from, Elements.From]
 
@@ -2418,7 +2450,7 @@ provides: [Elements.from, Elements.From]
 Elements.from = function(text, excludeScripts){
 	if (excludeScripts || excludeScripts == null) text = text.stripScripts();
 
-	var container, match = text.match(/^\s*<(t[dhr]|tbody|tfoot|thead)/i);
+	var container, match = text.match(/^\s*(?:<!--.*?-->\s*)*<(t[dhr]|tbody|tfoot|thead)/i);
 
 	if (match){
 		container = new Element('table');
@@ -2447,7 +2479,7 @@ authors:
 
 requires: [Core/Element.Event, Core/Element.Delegation, Events.Pseudos]
 
-provides: [Element.Event.Pseudos, Element.Delegation]
+provides: [Element.Event.Pseudos, Element.Delegation.Pseudo]
 
 ...
 */
@@ -2500,12 +2532,14 @@ DOMEvent.definePseudo('keys', function(split, fn, args){
 
 	var event = args[0],
 		keys = [],
-		pressed = this.retrieve(keysStoreKey, []);
+		pressed = this.retrieve(keysStoreKey, []),
+		value = split.value;
 
-	keys.append(split.value.replace('++', function(){
+	if (value != '+') keys.append(value.replace('++', function(){
 		keys.push('+'); // shift++ and shift+++a
 		return '';
 	}).split('+'));
+	else keys = ['+'];
 
 	pressed.include(event.key);
 
@@ -2548,8 +2582,10 @@ DOMEvent.defineKeys({
 	'220': '\\',
 	'221': ']',
 	'222': "'",
-	'107': '+'
-}).defineKey(Browser.firefox ? 109 : 189, '-');
+	'107': '+',
+	'109': '-', // subtract
+	'189': '-'  // dash
+})
 
 })();
 
@@ -2573,7 +2609,7 @@ authors:
 requires:
   - Core/Element.Style
   - Core/Element.Dimensions
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Element.Measure]
 
@@ -2741,7 +2777,7 @@ requires:
   - Core/Element.Event
   - Core/Element.Dimensions
   - Core/Element.Style
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Element.Pin]
 
@@ -2775,11 +2811,13 @@ provides: [Element.Pin]
 				scrollFixer;
 
 			if (enable !== false){
-				pinnedPosition = this.getPosition(supportsPositionFixed ? document.body : this.getOffsetParent());
-				if (!this.retrieve('pin:_pinned')){
+				pinnedPosition = this.getPosition();
+				if (!this.retrieve('pin:_pinned')) {
 					var currentPosition = {
 						top: pinnedPosition.y - scroll.y,
-						left: pinnedPosition.x - scroll.x
+						left: pinnedPosition.x - scroll.x,
+						margin: '0px',
+						padding: '0px'
 					};
 
 					if (supportsPositionFixed && !forceScroll){
@@ -2819,7 +2857,7 @@ provides: [Element.Pin]
 				parent = this.getParent();
 				var offsetParent = (parent.getComputedStyle('position') != 'static' ? parent : parent.getOffsetParent());
 
-				pinnedPosition = this.getPosition(offsetParent);
+				pinnedPosition = this.getPosition();
 
 				this.store('pin:_pinned', false);
 				scrollFixer = this.retrieve('pin:_scrollFixer');
@@ -2920,13 +2958,15 @@ var local = Element.Position = {
 	},
 
 	setOffsetOption: function(element, options){
-		var parentOffset = {x: 0, y: 0},
-			offsetParent = element.measure(function(){
-				return document.id(this.getOffsetParent());
-			}),
-			parentScroll = offsetParent.getScroll();
+		var parentOffset = {x: 0, y: 0};
+		var parentScroll = {x: 0, y: 0};
+		var offsetParent = element.measure(function(){
+			return document.id(this.getOffsetParent());
+		});
 
 		if (!offsetParent || offsetParent == element.getDocument().body) return;
+
+		parentScroll = offsetParent.getScroll();
 		parentOffset = offsetParent.measure(function(){
 			var position = this.getPosition();
 			if (this.getStyle('position') == 'fixed'){
@@ -3106,7 +3146,7 @@ authors:
 
 requires:
   - Core/Element.Style
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Element.Shortcuts]
 
@@ -3187,15 +3227,20 @@ requires:
   - Core/Element.Style
   - Core/Options
   - Core/Events
-  - /Element.Position
-  - /Class.Occlude
+  - Element.Position
+  - Class.Occlude
 
 provides: [IframeShim]
 
 ...
 */
 
-var IframeShim = new Class({
+(function(){
+
+var browsers = false;
+
+
+this.IframeShim = new Class({
 
 	Implements: [Options, Events, Class.Occlude],
 
@@ -3206,7 +3251,7 @@ var IframeShim = new Class({
 		zIndex: null,
 		margin: 0,
 		offset: {x: 0, y: 0},
-		browsers: (Browser.ie6 || (Browser.firefox && Browser.version < 3 && Browser.Platform.mac))
+		browsers: browsers
 	},
 
 	property: 'IframeShim',
@@ -3295,6 +3340,8 @@ var IframeShim = new Class({
 
 });
 
+})();
+
 window.addEvent('load', function(){
 	IframeShim.ready = true;
 });
@@ -3318,9 +3365,9 @@ requires:
   - Core/Options
   - Core/Events
   - Core/Element.Event
-  - /Class.Binds
-  - /Element.Position
-  - /IframeShim
+  - Class.Binds
+  - Element.Position
+  - IframeShim
 
 provides: [Mask]
 
@@ -3383,7 +3430,7 @@ var Mask = new Class({
 	},
 
 	inject: function(target, where){
-		where = where || (this.options.inject ? this.options.inject.where : '') || this.target == document.body ? 'inside' : 'after';
+		where = where || (this.options.inject ? this.options.inject.where : '') || (this.target == document.body ? 'inside' : 'after');
 		target = target || (this.options.inject && this.options.inject.target) || this.target;
 
 		this.element.inject(target, where);
@@ -3530,8 +3577,8 @@ authors:
 requires:
   - Core/Fx.Tween
   - Core/Request
-  - /Class.refactor
-  - /Mask
+  - Class.refactor
+  - Mask
 
 provides: [Spinner]
 
@@ -3605,6 +3652,7 @@ var Spinner = new Class({
 			return this;
 		}
 
+		this.target.set('aria-busy', 'true');
 		this.active = true;
 
 		return this.parent(noFx);
@@ -3639,7 +3687,10 @@ var Spinner = new Class({
 			this.callChain.delay(20, this);
 			return this;
 		}
+
+		this.target.set('aria-busy', 'false');
 		this.active = true;
+
 		return this.parent(noFx);
 	},
 
@@ -3747,11 +3798,11 @@ authors:
 
 requires:
   - Core/Request.HTML
-  - /Class.Binds
-  - /Class.Occlude
-  - /Spinner
-  - /String.QueryString
-  - /Element.Delegation
+  - Class.Binds
+  - Class.Occlude
+  - Spinner
+  - String.QueryString
+  - Element.Delegation.Pseudo
 
 provides: [Form.Request]
 
@@ -3884,7 +3935,7 @@ if (!window.Form) window.Form = {};
 				//form validator was created after Form.Request
 				this.element.removeEvent('submit', this.onSubmit);
 				fv.addEvent('onFormValidate', this.onFormValidate);
-				this.element.validate();
+				fv.validate(event);
 				return;
 			}
 			if (event) event.stop();
@@ -3952,8 +4003,8 @@ authors:
 
 requires:
   - Core/Fx.Morph
-  - /Element.Shortcuts
-  - /Element.Measure
+  - Element.Shortcuts
+  - Element.Measure
 
 provides: [Fx.Reveal]
 
@@ -3988,13 +4039,13 @@ Fx.Reveal = new Class({
 		widthOverride: null,*/
 		link: 'cancel',
 		styles: ['padding', 'border', 'margin'],
-		transitionOpacity: !Browser.ie6,
+		transitionOpacity: 'opacity' in document.documentElement,
 		mode: 'vertical',
 		display: function(){
 			return this.element.get('tag') != 'tr' ? 'block' : 'table-row';
 		},
 		opacity: 1,
-		hideInputs: Browser.ie ? 'select, input, textarea, object, embed' : null
+		hideInputs: !('opacity' in document.documentElement) ? 'select, input, textarea, object, embed' : null
 	},
 
 	dissolve: function(){
@@ -4199,9 +4250,9 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Form.Request
-  - /Fx.Reveal
-  - /Elements.from
+  - Form.Request
+  - Fx.Reveal
+  - Elements.from
 
 provides: [Form.Request.Append]
 
@@ -4276,7 +4327,7 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.en-US.Form.Validator]
 
@@ -4311,7 +4362,7 @@ Locale.define('en-US', 'FormValidator', {
 	match: 'This field needs to match the {matchName} field',
 	startDate: 'the start date',
 	endDate: 'the end date',
-	currendDate: 'the current date',
+	currentDate: 'the current date',
 	afterDate: 'The date should be the same or after {label}.',
 	beforeDate: 'The date should be the same or before {label}.',
 	startMonth: 'Please select a start month',
@@ -4338,16 +4389,17 @@ authors:
 requires:
   - Core/Options
   - Core/Events
+  - Core/Element.Delegation
   - Core/Slick.Finder
   - Core/Element.Event
   - Core/Element.Style
   - Core/JSON
-  - /Locale
-  - /Class.Binds
-  - /Date
-  - /Element.Forms
-  - /Locale.en-US.Form.Validator
-  - /Element.Shortcuts
+  - Locale
+  - Class.Binds
+  - Date
+  - Element.Forms
+  - Locale.en-US.Form.Validator
+  - Element.Shortcuts
 
 provides: [Form.Validator, InputValidator, FormValidator.BaseValidators]
 
@@ -4407,7 +4459,7 @@ Element.Properties.validatorProps = {
 		if (this.retrieve('$moo:validatorProps')) return this.retrieve('$moo:validatorProps');
 		if (this.getProperty('data-validator-properties') || this.getProperty('validatorProps')){
 			try {
-				this.store('$moo:validatorProps', JSON.decode(this.getProperty('validatorProps') || this.getProperty('data-validator-properties')));
+				this.store('$moo:validatorProps', JSON.decode(this.getProperty('validatorProps') || this.getProperty('data-validator-properties'), false));
 			}catch(e){
 				return {};
 			}
@@ -4439,8 +4491,6 @@ Form.Validator = new Class({
 
 	Implements: [Options, Events],
 
-	Binds: ['onSubmit'],
-
 	options: {/*
 		onFormValidate: function(isValid, form, event){},
 		onElementValidate: function(isValid, field, className, warn){},
@@ -4466,11 +4516,15 @@ Form.Validator = new Class({
 	initialize: function(form, options){
 		this.setOptions(options);
 		this.element = document.id(form);
-		this.element.store('validator', this);
 		this.warningPrefix = Function.from(this.options.warningPrefix)();
 		this.errorPrefix = Function.from(this.options.errorPrefix)();
-		if (this.options.evaluateOnSubmit) this.element.addEvent('submit', this.onSubmit);
-		if (this.options.evaluateFieldsOnBlur || this.options.evaluateFieldsOnChange) this.watchFields(this.getFields());
+		this._bound = {
+			onSubmit: this.onSubmit.bind(this),
+			blurOrChange: function(event, field){
+				this.validationMonitor(field, true);
+			}.bind(this)
+		};
+		this.enable();
 	},
 
 	toElement: function(){
@@ -4481,13 +4535,24 @@ Form.Validator = new Class({
 		return (this.fields = this.element.getElements(this.options.fieldSelectors));
 	},
 
-	watchFields: function(fields){
-		fields.each(function(el){
-			if (this.options.evaluateFieldsOnBlur)
-				el.addEvent('blur', this.validationMonitor.pass([el, false], this));
-			if (this.options.evaluateFieldsOnChange)
-				el.addEvent('change', this.validationMonitor.pass([el, true], this));
-		}, this);
+	enable: function(){
+		this.element.store('validator', this);
+		if (this.options.evaluateOnSubmit) this.element.addEvent('submit', this._bound.onSubmit);
+		if (this.options.evaluateFieldsOnBlur){
+			this.element.addEvent('blur:relay(input,select,textarea)', this._bound.blurOrChange);
+		}
+		if (this.options.evaluateFieldsOnChange){
+			this.element.addEvent('change:relay(input,select,textarea)', this._bound.blurOrChange);
+		}
+	},
+
+	disable: function(){
+		this.element.eliminate('validator');
+		this.element.removeEvents({
+			submit: this._bound.onSubmit,
+			'blur:relay(input,select,textarea)': this._bound.blurOrChange,
+			'change:relay(input,select,textarea)': this._bound.blurOrChange
+		});
 	},
 
 	validationMonitor: function(){
@@ -4566,8 +4631,8 @@ Form.Validator = new Class({
 		var validator = this.getValidator(className);
 		if (warn != null) warn = false;
 		if (this.hasValidator(field, 'warnOnly')) warn = true;
-		var isValid = this.hasValidator(field, 'ignoreValidation') || (validator ? validator.test(field) : true);
-		if (validator && field.isVisible()) this.fireEvent('elementValidate', [isValid, field, className, warn]);
+		var isValid = field.hasClass('ignoreValidation') || (validator ? validator.test(field) : true);
+		if (validator) this.fireEvent('elementValidate', [isValid, field, className, warn]);
 		if (warn) return true;
 		return isValid;
 	},
@@ -4686,7 +4751,7 @@ Form.Validator.addAllThese([
 			if (typeOf(props.length) != 'null') return (element.get('value').length == props.length || element.get('value').length == 0);
 			else return true;
 		}
-	}],	
+	}],
 
 	['minLength', {
 		errorMsg: function(element, props){
@@ -4759,8 +4824,8 @@ Form.Validator.addAllThese([
 		},
 		test: function(element, props){
 			if (Form.Validator.getValidator('IsEmpty').test(element)) return true;
-			var dateLocale = Locale.getCurrent().sets.Date,
-				dateNouns = new RegExp([dateLocale.days, dateLocale.days_abbr, dateLocale.months, dateLocale.months_abbr].flatten().join('|'), 'i'),
+			var dateLocale = Locale.get('Date'),
+				dateNouns = new RegExp([dateLocale.days, dateLocale.days_abbr, dateLocale.months, dateLocale.months_abbr, dateLocale.AM, dateLocale.PM].flatten().join('|'), 'i'),
 				value = element.get('value'),
 				wordsInValue = value.match(/[a-z]+/gi);
 
@@ -4769,7 +4834,6 @@ Form.Validator.addAllThese([
 				var date = Date.parse(value),
 					format = props.dateFormat || '%x',
 					formatted = date.format(format);
-
 				if (formatted != 'invalid date') element.set('value', formatted);
 				return date.isValid();
 		}
@@ -4870,7 +4934,7 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Form.Validator
+  - Form.Validator
 
 provides: [Form.Validator.Inline]
 
@@ -4945,7 +5009,7 @@ Form.Validator.Inline = new Class({
 			!field.retrieve('$moo:' + this.getPropName(className)) &&
 			(
 				advice.getStyle('display') == 'none' ||
-				advice.getStyle('visiblity') == 'hidden' ||
+				advice.getStyle('visibility') == 'hidden' ||
 				advice.getStyle('opacity') == 0
 			)
 		){
@@ -5062,7 +5126,7 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Form.Validator
+  - Form.Validator
 
 provides: [Form.Validator.Extras]
 
@@ -5473,7 +5537,7 @@ var OverText = new Class({
 	},
 
 	show: function(){
-		if (this.text && !this.text.isDisplayed()){
+		if (document.id(this.text) && !this.text.isDisplayed()){
 			this.text.show();
 			this.reposition();
 			this.fireEvent('textShow', [this.text, this.element]);
@@ -5555,7 +5619,7 @@ authors:
 
 requires:
   - Core/Fx.CSS
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Fx.Elements]
 
@@ -5631,7 +5695,7 @@ authors:
 
 requires:
   - Core/Element.Event
-  - /Fx.Elements
+  - Fx.Elements
 
 provides: [Fx.Accordion]
 
@@ -5781,18 +5845,19 @@ Fx.Accordion = new Class({
 
 		if (useFx == null) useFx = true;
 		if (typeOf(index) == 'element') index = elements.indexOf(index);
-		if (index == this.previous && !options.alwaysHide) return this;
+		if (index == this.current && !options.alwaysHide) return this;
 
 		if (options.resetHeight){
-			var prev = elements[this.previous];
+			var prev = elements[this.current];
 			if (prev && !this.selfHidden){
 				for (var fx in effects) prev.setStyle(fx, prev[effects[fx]]);
 			}
 		}
 
-		if ((this.timer && options.link == 'chain') || (index === this.previous && !options.alwaysHide)) return this;
+		if ((this.timer && options.link == 'chain') || (index === this.current && !options.alwaysHide)) return this;
 
-		this.previous = index;
+		if (this.current != null) this.previous = this.current;
+		this.current = index;
 		this.selfHidden = false;
 
 		elements.each(function(el, i){
@@ -5841,7 +5906,7 @@ authors:
 
 requires:
   - Core/Fx.Morph
-  - /Element.Position
+  - Element.Position
 
 provides: [Fx.Move]
 
@@ -5916,7 +5981,7 @@ requires:
   - Core/Fx
   - Core/Element.Event
   - Core/Element.Dimensions
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Fx.Scroll]
 
@@ -5954,7 +6019,6 @@ Fx.Scroll = new Class({
 
 	set: function(){
 		var now = Array.flatten(arguments);
-		if (Browser.firefox) now = [Math.round(now[0]), Math.round(now[1])]; // not needed anymore in newer firefox versions
 		this.element.scrollTo(now[0], now[1]);
 		return this;
 	},
@@ -6088,7 +6152,7 @@ authors:
 requires:
   - Core/Fx
   - Core/Element.Style
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Fx.Slide]
 
@@ -6259,7 +6323,7 @@ authors:
 
 requires:
   - Core/Slick.Finder
-  - /Fx.Scroll
+  - Fx.Scroll
 
 provides: [Fx.SmoothScroll]
 
@@ -6331,8 +6395,8 @@ authors:
 
 requires:
   - Core/Element.Dimensions
-  - /Fx.Elements
-  - /Element.Measure
+  - Fx.Elements
+  - Element.Measure
 
 provides: [Fx.Sort]
 
@@ -6511,7 +6575,7 @@ requires:
   - Core/Element.Event
   - Core/Element.Style
   - Core/Element.Dimensions
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Drag]
 ...
@@ -6557,10 +6621,10 @@ var Drag = new Class({
 		this.mouse = {'now': {}, 'pos': {}};
 		this.value = {'start': {}, 'now': {}};
 
-		this.selection = (Browser.ie) ? 'selectstart' : 'mousedown';
+		this.selection = 'selectstart' in document ? 'selectstart' : 'mousedown';
 
 
-		if (Browser.ie && !Drag.ondragstartFixed){
+		if ('ondragstart' in document && !('FileReader' in window) && !Drag.ondragstartFixed){
 			document.ondragstart = Function.from(false);
 			Drag.ondragstartFixed = true;
 		}
@@ -6745,7 +6809,7 @@ authors:
 
 requires:
   - Core/Element.Dimensions
-  - /Drag
+  - Drag
 
 provides: [Drag.Move]
 
@@ -6772,10 +6836,7 @@ Drag.Move = new Class({
 		element = this.element;
 
 		this.droppables = $$(this.options.droppables);
-		this.container = document.id(this.options.container);
-
-		if (this.container && typeOf(this.container) != 'element')
-			this.container = document.id(this.container.getDocument().body);
+		this.setContainer(this.options.container);
 
 		if (this.options.style){
 			if (this.options.modifiers.x == 'left' && this.options.modifiers.y == 'top'){
@@ -6791,6 +6852,13 @@ Drag.Move = new Class({
 
 		this.addEvent('start', this.checkDroppables, true);
 		this.overed = null;
+	},
+	
+	setContainer: function(container) {
+		this.container = document.id(container);
+		if (this.container && typeOf(this.container) != 'element'){
+			this.container = document.id(this.container.getDocument().body);
+		}
 	},
 
 	start: function(event){
@@ -6856,7 +6924,9 @@ Drag.Move = new Class({
 
 			if (container != offsetParent){
 				left += containerMargin.left + offsetParentPadding.left;
-				top += ((Browser.ie6 || Browser.ie7) ? 0 : containerMargin.top) + offsetParentPadding.top;
+				if (!offsetParentPadding.left && left < 0) left = 0;
+				top += offsetParent == document.body ? 0 : containerMargin.top + offsetParentPadding.top;
+				if (!offsetParentPadding.top && top < 0) top = 0;
 			}
 		} else {
 			left -= elementMargin.left;
@@ -6940,9 +7010,10 @@ authors:
 
 requires:
   - Core/Element.Dimensions
-  - /Class.Binds
-  - /Drag
-  - /Element.Measure
+  - Core/Number
+  - Class.Binds
+  - Drag
+  - Element.Measure
 
 provides: [Slider]
 
@@ -6957,6 +7028,7 @@ var Slider = new Class({
 
 	options: {/*
 		onTick: function(intPosition){},
+		onMove: function(){},
 		onChange: function(intStep){},
 		onComplete: function(strStep){},*/
 		onTick: function(position){
@@ -6976,7 +7048,7 @@ var Slider = new Class({
 		options = this.options;
 		this.element = document.id(element);
 		knob = this.knob = document.id(knob);
-		this.previousChange = this.previousEnd = this.step = -1;
+		this.previousChange = this.previousEnd = this.step = options.initialStep ? options.initialStep : options.range ? options.range[0] : 0;
 
 		var limit = {},
 			modifiers = {x: false, y: false};
@@ -6994,7 +7066,7 @@ var Slider = new Class({
 		}
 
 		this.setSliderDimensions();
-		this.setRange(options.range);
+		this.setRange(options.range, null, true);
 
 		if (knob.getStyle('position') == 'static') knob.setStyle('position', 'relative');
 		knob.setStyle(this.property, -options.offset);
@@ -7022,8 +7094,8 @@ var Slider = new Class({
 		if (options.snap) this.setSnap(dragOptions);
 
 		this.drag = new Drag(knob, dragOptions);
+		if (options.initialStep != null) this.set(options.initialStep, true);
 		this.attach();
-		if (options.initialStep != null) this.set(options.initialStep);
 	},
 
 	attach: function(){
@@ -7051,7 +7123,7 @@ var Slider = new Class({
 	setSnap: function(options){
 		if (!options) options = this.drag.options;
 		options.grid = Math.ceil(this.stepWidth);
-		options.limit[this.axis][1] = this.full;
+		options.limit[this.axis][1] = this.element[this.offset];
 		return this;
 	},
 
@@ -7069,25 +7141,34 @@ var Slider = new Class({
 		return this;
 	},
 
-	set: function(step){
+	set: function(step, silently){
 		if (!((this.range > 0) ^ (step < this.min))) step = this.min;
 		if (!((this.range > 0) ^ (step > this.max))) step = this.max;
 
-		this.step = Math.round(step);
-		return this.checkStep()
-			.fireEvent('tick', this.toPosition(this.step))
-			.end();
+		this.step = (step).round(this.modulus.decimalLength);
+		if (silently) this.checkStep().setKnobPosition(this.toPosition(this.step));
+		else this.checkStep().fireEvent('tick', this.toPosition(this.step)).fireEvent('move').end();
+		return this;
 	},
 
-	setRange: function(range, pos){
+	setRange: function(range, pos, silently){
 		this.min = Array.pick([range[0], 0]);
 		this.max = Array.pick([range[1], this.options.steps]);
 		this.range = this.max - this.min;
 		this.steps = this.options.steps || this.full;
-		this.stepSize = Math.abs(this.range) / this.steps;
+		var stepSize = this.stepSize = Math.abs(this.range) / this.steps;
 		this.stepWidth = this.stepSize * this.full / Math.abs(this.range);
-		if (range) this.set(Array.pick([pos, this.step]).floor(this.min).max(this.max));
+		this.setModulus();
+
+		if (range) this.set(Array.pick([pos, this.step]).limit(this.min,this.max), silently);
 		return this;
+	},
+    
+	setModulus: function(){
+		var decimals = ((this.stepSize + '').split('.')[1] || []).length,
+			modulus = 1 + '';
+		while (decimals--) modulus += '0';
+		this.modulus = {multiplier: (modulus).toInt(10), decimalLength: modulus.length - 1};
 	},
 
 	clickedElement: function(event){
@@ -7098,10 +7179,11 @@ var Slider = new Class({
 
 		position = position.limit(-this.options.offset, this.full - this.options.offset);
 
-		this.step = Math.round(this.min + dir * this.toStep(position));
+		this.step = (this.min + dir * this.toStep(position)).round(this.modulus.decimalLength);
 
 		this.checkStep()
 			.fireEvent('tick', position)
+			.fireEvent('move')
 			.end();
 	},
 
@@ -7117,8 +7199,9 @@ var Slider = new Class({
 
 		position = position.limit(-this.options.offset, this.full -this.options.offset);
 
-		this.step = Math.round(this.min + dir * this.toStep(position));
+		this.step = (this.min + dir * this.toStep(position)).round(this.modulus.decimalLength);
 		this.checkStep();
+		this.fireEvent('move');
 	},
 
 	checkStep: function(){
@@ -7141,11 +7224,11 @@ var Slider = new Class({
 
 	toStep: function(position){
 		var step = (position + this.options.offset) * this.stepSize / this.full * this.steps;
-		return this.options.steps ? Math.round(step -= step % this.stepSize) : step;
+		return this.options.steps ? (step - (step * this.modulus.multiplier) % (this.stepSize * this.modulus.multiplier) / this.modulus.multiplier).round(this.modulus.decimalLength) : step;
 	},
 
 	toPosition: function(step){
-		return (this.full * Math.abs(this.min - step)) / (this.steps * this.stepSize) - this.options.offset;
+		return (this.full * Math.abs(this.min - step)) / (this.steps * this.stepSize) - this.options.offset || 0;
 	}
 
 });
@@ -7167,7 +7250,7 @@ authors:
 
 requires:
   - Core/Fx.Morph
-  - /Drag.Move
+  - Drag.Move
 
 provides: [Sortables]
 
@@ -7186,7 +7269,8 @@ var Sortables = new Class({
 		clone: false,
 		revert: false,
 		handle: false,
-		dragOptions: {}
+		dragOptions: {},
+		unDraggableTags: ['button', 'input', 'a', 'textarea', 'select', 'option']
 	},
 
 	initialize: function(lists, options){
@@ -7252,6 +7336,24 @@ var Sortables = new Class({
 			return list;
 		}, this));
 	},
+    
+	getDroppableCoordinates: function (element){
+		var offsetParent = element.getOffsetParent();
+		var position = element.getPosition(offsetParent);
+		var scroll = {
+			w: window.getScroll(),
+			offsetParent: offsetParent.getScroll()
+		};
+		position.x += scroll.offsetParent.x;
+		position.y += scroll.offsetParent.y;
+
+		if (offsetParent.getStyle('position') == 'fixed'){
+			position.x -= scroll.w.x;
+			position.y -= scroll.w.y;
+		}
+
+        return position;
+	},
 
 	getClone: function(event, element){
 		if (!this.options.clone) return new Element(element.tagName).inject(document.body);
@@ -7272,7 +7374,7 @@ var Sortables = new Class({
 			});
 		}
 
-		return clone.inject(this.list).setPosition(element.getPosition(element.getOffsetParent()));
+		return clone.inject(this.list).setPosition(this.getDroppableCoordinates(this.element));
 	},
 
 	getDroppables: function(){
@@ -7297,7 +7399,7 @@ var Sortables = new Class({
 		if (
 			!this.idle ||
 			event.rightClick ||
-			['button', 'input', 'a', 'textarea'].contains(event.target.get('tag'))
+			(!this.options.handle && this.options.unDraggableTags.contains(event.target.get('tag')))
 		) return;
 
 		this.idle = false;
@@ -7328,14 +7430,16 @@ var Sortables = new Class({
 	end: function(){
 		this.drag.detach();
 		this.element.setStyle('opacity', this.opacity);
+		var self = this;
 		if (this.effect){
 			var dim = this.element.getStyles('width', 'height'),
 				clone = this.clone,
-				pos = clone.computePosition(this.element.getPosition(this.clone.getOffsetParent()));
+				pos = clone.computePosition(this.getDroppableCoordinates(clone));
 
 			var destroy = function(){
 				this.removeEvent('cancel', destroy);
 				clone.destroy();
+				self.reset();
 			};
 
 			this.effect.element = clone;
@@ -7348,8 +7452,9 @@ var Sortables = new Class({
 			}).addEvent('cancel', destroy).chain(destroy);
 		} else {
 			this.clone.destroy();
+			self.reset();
 		}
-		this.reset();
+		
 	},
 
 	reset: function(){
@@ -7539,7 +7644,7 @@ authors:
 requires:
   - Core/Element
   - Core/Request
-  - /Class.Binds
+  - Class.Binds
 
 provides: [Request.Queue]
 
@@ -7752,7 +7857,7 @@ authors:
 
 requires:
   - Core/Request
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Request.Periodical]
 
@@ -7805,7 +7910,7 @@ authors:
 
 requires:
   - Core/Element.Event
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Assets]
 
@@ -7826,7 +7931,7 @@ var Asset = {
 		delete properties.document;
 
 		if (load){
-			if (typeof script.onreadystatechange != 'undefined'){
+			if (!script.addEventListener){
 				script.addEvent('readystatechange', function(){
 					if (['loaded', 'complete'].contains(this.readyState)) load.call(this);
 				});
@@ -8102,7 +8207,7 @@ authors:
 
 requires:
   - Core/Events
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Group]
 
@@ -8160,8 +8265,8 @@ authors:
 requires:
   - Core/Cookie
   - Core/JSON
-  - /MooTools.More
-  - /Hash
+  - MooTools.More
+  - Hash
 
 provides: [Hash.Cookie]
 
@@ -8267,6 +8372,121 @@ if (this.Type) new Type('Table', Table);
 /*
 ---
 
+name: Swiff
+
+description: Wrapper for embedding SWF movies. Supports External Interface Communication.
+
+license: MIT-style license.
+
+credits:
+  - Flash detection & Internet Explorer + Flash Player 9 fix inspired by SWFObject.
+
+requires: [Core/Options, Core/Object, Core/Element]
+
+provides: Swiff
+
+...
+*/
+
+(function(){
+
+var Swiff = this.Swiff = new Class({
+
+	Implements: Options,
+
+	options: {
+		id: null,
+		height: 1,
+		width: 1,
+		container: null,
+		properties: {},
+		params: {
+			quality: 'high',
+			allowScriptAccess: 'always',
+			wMode: 'window',
+			swLiveConnect: true
+		},
+		callBacks: {},
+		vars: {}
+	},
+
+	toElement: function(){
+		return this.object;
+	},
+
+	initialize: function(path, options){
+		this.instance = 'Swiff_' + String.uniqueID();
+
+		this.setOptions(options);
+		options = this.options;
+		var id = this.id = options.id || this.instance;
+		var container = document.id(options.container);
+
+		Swiff.CallBacks[this.instance] = {};
+
+		var params = options.params, vars = options.vars, callBacks = options.callBacks;
+		var properties = Object.append({height: options.height, width: options.width}, options.properties);
+
+		var self = this;
+
+		for (var callBack in callBacks){
+			Swiff.CallBacks[this.instance][callBack] = (function(option){
+				return function(){
+					return option.apply(self.object, arguments);
+				};
+			})(callBacks[callBack]);
+			vars[callBack] = 'Swiff.CallBacks.' + this.instance + '.' + callBack;
+		}
+
+		params.flashVars = Object.toQueryString(vars);
+		if ('ActiveXObject' in window){
+			properties.classid = 'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000';
+			params.movie = path;
+		} else {
+			properties.type = 'application/x-shockwave-flash';
+		}
+		properties.data = path;
+
+		var build = '<object id="' + id + '"';
+		for (var property in properties) build += ' ' + property + '="' + properties[property] + '"';
+		build += '>';
+		for (var param in params){
+			if (params[param]) build += '<param name="' + param + '" value="' + params[param] + '" />';
+		}
+		build += '</object>';
+		this.object = ((container) ? container.empty() : new Element('div')).set('html', build).firstChild;
+	},
+
+	replaces: function(element){
+		element = document.id(element, true);
+		element.parentNode.replaceChild(this.toElement(), element);
+		return this;
+	},
+
+	inject: function(element){
+		document.id(element, true).appendChild(this.toElement());
+		return this;
+	},
+
+	remote: function(){
+		return Swiff.remote.apply(Swiff, [this.toElement()].append(arguments));
+	}
+
+});
+
+Swiff.CallBacks = {};
+
+Swiff.remote = function(obj, fn){
+	var rs = obj.CallFunction('<invoke name="' + fn + '" returntype="javascript">' + __flash__argumentsToXML(arguments, 2) + '</invoke>');
+	return eval(rs);
+};
+
+})();
+
+
+/*
+---
+
 script: HtmlTable.js
 
 name: HtmlTable
@@ -8281,7 +8501,7 @@ authors:
 requires:
   - Core/Options
   - Core/Events
-  - /Class.Occlude
+  - Class.Occlude
 
 provides: [HtmlTable]
 
@@ -8376,10 +8596,10 @@ var HtmlTable = new Class({
 
 		row.each(function(data, index){
 			var td = tds[index] || new Element(tag || 'td').inject(tr),
-				content = (data ? data.content : '') || data,
+				content = ((data && Object.prototype.hasOwnProperty.call(data, 'content')) ? data.content : '') || data,
 				type = typeOf(content);
 
-			if (data && data.properties) td.set(data.properties);
+			if (data && Object.prototype.hasOwnProperty.call(data, 'properties')) td.set(data.properties);
 			if (/(element(s?)|array|collection)/.test(type)) td.empty().adopt(content);
 			else td.set('html', content);
 
@@ -8439,9 +8659,9 @@ authors:
   - Aaron Newton
 
 requires:
-  - /HtmlTable
-  - /Element.Shortcuts
-  - /Class.refactor
+  - HtmlTable
+  - Element.Shortcuts
+  - Class.refactor
 
 provides: [HtmlTable.Zebra]
 
@@ -8507,16 +8727,25 @@ authors:
 
 requires:
   - Core/Hash
-  - /HtmlTable
-  - /Class.refactor
-  - /Element.Delegation
-  - /String.Extras
-  - /Date
+  - HtmlTable
+  - Class.refactor
+  - Element.Delegation.Pseudo
+  - String.Extras
+  - Date
 
 provides: [HtmlTable.Sort]
 
 ...
 */
+(function(){
+
+var readOnlyNess = document.createElement('table');
+try {
+	readOnlyNess.innerHTML = '<tr><td></td></tr>';
+	readOnlyNess = readOnlyNess.childNodes.length === 0;
+} catch (e){
+	readOnlyNess = true;
+}
 
 HtmlTable = Class.refactor(HtmlTable, {
 
@@ -8562,7 +8791,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 
 	setHeaders: function(){
 		this.previous.apply(this, arguments);
-		if (this.sortEnabled) this.setParsers();
+		if (this.sortable) this.setParsers();
 	},
 
 	setParsers: function(){
@@ -8702,7 +8931,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 		if (!parser) return;
 
 		var rel;
-		if (!Browser.ie){
+		if (!readOnlyNess){
 			rel = this.body.getParent();
 			this.body.dispose();
 		}
@@ -8736,7 +8965,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 	},
 
 	reSort: function(){
-		if (this.sortEnabled) this.sort.call(this, this.sorted.index, this.sorted.reverse);
+		if (this.sortable) this.sort.call(this, this.sorted.index, this.sorted.reverse);
 		return this;
 	},
 
@@ -8744,7 +8973,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 		this.element.addClass(this.options.classSortable);
 		this.attachSorts(true);
 		this.setParsers();
-		this.sortEnabled = true;
+		this.sortable = true;
 		return this;
 	},
 
@@ -8755,7 +8984,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 			span.destroy();
 		});
 		this.sortSpans.empty();
-		this.sortEnabled = false;
+		this.sortable = false;
 		return this;
 	}
 
@@ -8809,7 +9038,7 @@ HtmlTable.Parsers = {
 	'floatLax': {
 		match: /^[^\d]+[\d]+\.[\d]+$/,
 		convert: function(){
-			return this.get('text').replace(/[^-?^\d.]/, '').stripTags();
+			return this.get('text').replace(/[^-?^\d.]/, '').stripTags().toFloat();
 		},
 		number: true
 	},
@@ -8836,6 +9065,9 @@ HtmlTable.defineParsers = function(parsers){
 		HtmlTable.ParserPriority.unshift(parser);
 	}
 };
+
+})();
+
 
 
 /*
@@ -9019,21 +9251,25 @@ provides: [Keyboard]
 		});
 
 		if (!parsed[type]){
-			var key, mods = {};
-			type.split('+').each(function(part){
-				if (regex.test(part)) mods[part] = true;
-				else key = part;
-			});
+		    if (type != '+'){
+				var key, mods = {};
+				type.split('+').each(function(part){
+					if (regex.test(part)) mods[part] = true;
+					else key = part;
+				});
 
-			mods.control = mods.control || mods.ctrl; // allow both control and ctrl
+				mods.control = mods.control || mods.ctrl; // allow both control and ctrl
 
-			var keys = [];
-			modifiers.each(function(mod){
-				if (mods[mod]) keys.push(mod);
-			});
+				var keys = [];
+				modifiers.each(function(mod){
+					if (mods[mod]) keys.push(mod);
+				});
 
-			if (key) keys.push(key);
-			parsed[type] = keys.join('+');
+				if (key) keys.push(key);
+				parsed[type] = keys.join('+');
+			} else {
+			    parsed[type] = type;
+			}
 		}
 
 		return eventType + ':keys(' + parsed[type] + ')';
@@ -9042,7 +9278,7 @@ provides: [Keyboard]
 	Keyboard.each = function(keyboard, fn){
 		var current = keyboard || Keyboard.manager;
 		while (current){
-			fn.run(current);
+			fn(current);
 			current = current._activeKB;
 		}
 	};
@@ -9097,8 +9333,8 @@ authors:
   - Perrin Westrich
 
 requires:
-  - /Keyboard
-  - /MooTools.More
+  - Keyboard
+  - MooTools.More
 
 provides: [Keyboard.Extras]
 
@@ -9209,12 +9445,12 @@ authors:
   - Aaron Newton
 
 requires:
-  - /Keyboard
-  - /Keyboard.Extras
-  - /HtmlTable
-  - /Class.refactor
-  - /Element.Delegation
-  - /Element.Shortcuts
+  - Keyboard
+  - Keyboard.Extras
+  - HtmlTable
+  - Class.refactor
+  - Element.Delegation.Pseudo
+  - Element.Shortcuts
 
 provides: [HtmlTable.Select]
 
@@ -9253,7 +9489,7 @@ HtmlTable = Class.refactor(HtmlTable, {
 	},
 
 	empty: function(){
-		this.selectNone();
+		if (this.body.rows.length) this.selectNone();
 		return this.previous();
 	},
 
@@ -9302,10 +9538,6 @@ HtmlTable = Class.refactor(HtmlTable, {
 
 	isSelected: function(row){
 		return this.selectedRows.contains(row);
-	},
-
-	getSelected: function(){
-		return this.selectedRows;
 	},
 
 	getSelected: function(){
@@ -9375,10 +9607,6 @@ HtmlTable = Class.refactor(HtmlTable, {
 
 	deselectRange: function(startRow, endRow){
 		this.selectRange(startRow, endRow, true);
-	},
-
-	getSelected: function(){
-		return this.selectedRows;
 	},
 
 /*
@@ -9675,7 +9903,7 @@ requires:
   - Core/Element.Event
   - Core/Element.Style
   - Core/Element.Dimensions
-  - /MooTools.More
+  - MooTools.More
 
 provides: [Tips]
 
@@ -9930,7 +10158,7 @@ authors:
 
 requires:
   - Core/JSON
-  - /Locale
+  - Locale
 
 provides: Locale.Set.From
 
@@ -9971,6 +10199,224 @@ Locale.Set.from = function(set, type){
 /*
 ---
 
+name: Locale.en-GB.Date
+
+description: Date messages for British English.
+
+license: MIT-style license
+
+authors:
+  - Aaron Newton
+
+requires:
+  - Locale
+  - Locale.en-US.Date
+
+provides: [Locale.en-GB.Date]
+
+...
+*/
+
+Locale.define('en-GB', 'Date', {
+
+	// Culture's date order: DD/MM/YYYY
+	dateOrder: ['date', 'month', 'year'],
+	shortDate: '%d/%m/%Y',
+	shortTime: '%H:%M'
+
+}).inherit('en-US', 'Date');
+
+
+/*
+---
+
+name: Locale.af-ZA.Date
+
+description: Date messages for ZA Afrikaans.
+
+license: MIT-style license
+
+authors:
+  - Werner Mollentze
+
+requires:
+  - Locale
+
+provides: [Locale.af-ZA.Date]
+
+...
+*/
+
+Locale.define('af-ZA', 'Date', {
+
+	months: ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'],
+	months_abbr: ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+	days: ['Sondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrydag', 'Saterdag'],
+	days_abbr: ['Son', 'Maa', 'Din', 'Woe', 'Don', 'Vry', 'Sat'],
+
+	// Culture's date order: MM/DD/YYYY
+	dateOrder: ['date', 'month', 'year'],
+	shortDate: '%d-%m-%Y',
+	shortTime: '%H:%M',
+	AM: 'VM',
+	PM: 'NM',
+	firstDayOfWeek: 1,
+   
+	// Date.Extras
+	ordinal: function(dayOfMonth){
+		return ((dayOfMonth > 1 && dayOfMonth < 20 && dayOfMonth != 8) || (dayOfMonth > 100 && dayOfMonth.toString().substr(-2, 1) == '1')) ? 'de' : 'ste';
+	},
+
+	lessThanMinuteAgo: 'minder as \'n minuut gelede',
+	minuteAgo: 'ongeveer \'n minuut gelede',
+	minutesAgo: '{delta} minute gelede',
+	hourAgo: 'omtret \'n uur gelede',
+	hoursAgo: 'ongeveer {delta} ure gelede',
+	dayAgo: '1 dag gelede',
+	daysAgo: '{delta} dae gelede',
+	weekAgo: '1 week gelede',
+	weeksAgo: '{delta} weke gelede',
+	monthAgo: '1 maand gelede',
+	monthsAgo: '{delta} maande gelede',
+	yearAgo: '1 jaar gelede',
+	yearsAgo: '{delta} jare gelede',
+
+	lessThanMinuteUntil: 'oor minder as \'n minuut',
+	minuteUntil: 'oor ongeveer \'n minuut',
+	minutesUntil: 'oor {delta} minute',
+	hourUntil: 'oor ongeveer \'n uur',
+	hoursUntil: 'oor {delta} uur',
+	dayUntil: 'oor ongeveer \'n dag',
+	daysUntil: 'oor {delta} dae',
+	weekUntil: 'oor \'n week',
+	weeksUntil: 'oor {delta} weke',
+	monthUntil: 'oor \'n maand',
+	monthsUntil: 'oor {delta} maande',
+	yearUntil: 'oor \'n jaar',
+	yearsUntil: 'oor {delta} jaar'
+
+});
+
+
+/*
+---
+
+name: Locale.af-ZA.Form.Validator
+
+description: Form Validator messages for Afrikaans.
+
+license: MIT-style license
+
+authors:
+  - Werner Mollentze
+
+requires:
+  - Locale
+
+provides: [Locale.af-ZA.Form.Validator]
+
+...
+*/
+
+Locale.define('af-ZA', 'FormValidator', {
+
+	required: 'Hierdie veld word vereis.',
+	length: 'Voer asseblief {length} karakters in (u het {elLength} karakters ingevoer)',
+	minLength: 'Voer asseblief ten minste {minLength} karakters in (u het {length} karakters ingevoer).',
+	maxLength: 'Moet asseblief nie meer as {maxLength} karakters invoer nie (u het {length} karakters ingevoer).',
+	integer: 'Voer asseblief \'n heelgetal in hierdie veld in. Getalle met desimale (bv. 1.25) word nie toegelaat nie.',
+	numeric: 'Voer asseblief slegs numeriese waardes in hierdie veld in (bv. "1" of "1.1" of "-1" of "-1.1").',
+	digits: 'Gebruik asseblief slegs nommers en punktuasie in hierdie veld. (by voorbeeld, \'n telefoon nommer wat koppeltekens en punte bevat is toelaatbaar).',
+	alpha: 'Gebruik asseblief slegs letters (a-z) binne-in hierdie veld. Geen spasies of ander karakters word toegelaat nie.',
+	alphanum: 'Gebruik asseblief slegs letters (a-z) en nommers (0-9) binne-in hierdie veld. Geen spasies of ander karakters word toegelaat nie.',
+	dateSuchAs: 'Voer asseblief \'n geldige datum soos {date} in',
+	dateInFormatMDY: 'Voer asseblief \'n geldige datum soos MM/DD/YYYY in (bv. "12/31/1999")',
+	email: 'Voer asseblief \'n geldige e-pos adres in. Byvoorbeeld "fred@domain.com".',
+	url: 'Voer asseblief \'n geldige bronadres (URL) soos http://www.example.com in.',
+	currencyDollar: 'Voer asseblief \'n geldige $ bedrag in. Byvoorbeeld $100.00 .',
+	oneRequired: 'Voer asseblief iets in vir ten minste een van hierdie velde.',
+	errorPrefix: 'Fout: ',
+	warningPrefix: 'Waarskuwing: ',
+
+	// Form.Validator.Extras
+	noSpace: 'Daar mag geen spasies in hierdie toevoer wees nie.',
+	reqChkByNode: 'Geen items is gekies nie.',
+	requiredChk: 'Hierdie veld word vereis.',
+	reqChkByName: 'Kies asseblief \'n {label}.',
+	match: 'Hierdie veld moet by die {matchName} veld pas',
+	startDate: 'die begin datum',
+	endDate: 'die eind datum',
+	currentDate: 'die huidige datum',
+	afterDate: 'Die datum moet dieselfde of na {label} wees.',
+	beforeDate: 'Die datum moet dieselfde of voor {label} wees.',
+	startMonth: 'Kies asseblief \'n begin maand',
+	sameMonth: 'Hierdie twee datums moet in dieselfde maand wees - u moet een of beide verander.',
+	creditcard: 'Die ingevoerde kredietkaart nommer is ongeldig. Bevestig asseblief die nommer en probeer weer. {length} syfers is ingevoer.'
+
+});
+
+
+/*
+---
+
+name: Locale.ZA.Number
+
+description: Number messages for ZA.
+
+license: MIT-style license
+
+authors:
+  - Werner Mollentze
+
+requires:
+  - Locale
+
+provides: [Locale.ZA.Number]
+
+...
+*/
+
+Locale.define('ZA', 'Number', {
+
+	decimal: '.',
+	group: ',',
+
+	currency: {
+		prefix: 'R '
+	}
+
+});
+
+
+
+
+/*
+---
+
+name: Locale.af-ZA.Number
+
+description: Number messages for ZA Afrikaans.
+
+license: MIT-style license
+
+authors:
+  - Werner Mollentze
+
+requires:
+  - Locale
+  - Locale.ZA.Number
+
+provides: [Locale.af-ZA.Number]
+
+...
+*/
+
+Locale.define('af-ZA').inherit('ZA', 'Number');
+
+
+/*
+---
+
 name: Locale.ar.Date
 
 description: Date messages for Arabic.
@@ -9981,7 +10427,7 @@ authors:
   - Chafik Barbar
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ar.Date]
 
@@ -10011,7 +10457,7 @@ authors:
   - Chafik Barbar
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ar.Form.Validator]
 
@@ -10053,7 +10499,7 @@ authors:
   - Ãlfons Sanchez
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ca-CA.Date]
 
@@ -10111,7 +10557,7 @@ authors:
   - Ãlfons Sanchez
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ca-CA.Form.Validator]
 
@@ -10145,7 +10591,7 @@ Locale.define('ca-CA', 'FormValidator', {
 	match: 'Aquest camp necessita coincidir amb el camp {matchName}',
 	startDate: 'la data de inici',
 	endDate: 'la data de fi',
-	currendDate: 'la data actual',
+	currentDate: 'la data actual',
 	afterDate: 'La data deu ser igual o posterior a {label}.',
 	beforeDate: 'La data deu ser igual o anterior a {label}.',
 	startMonth: 'Per favor selecciona un mes d´orige',
@@ -10168,7 +10614,7 @@ authors:
   - Christopher Zukowski
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.cs-CZ.Date]
 
@@ -10249,7 +10695,7 @@ authors:
   - Jan Černý chemiX
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.cs-CZ.Form.Validator]
 
@@ -10283,7 +10729,7 @@ Locale.define('cs-CZ', 'FormValidator', {
 	match: 'Tato položka se musí shodovat s položkou {matchName}',
 	startDate: 'datum zahájení',
 	endDate: 'datum ukončení',
-	currendDate: 'aktuální datum',
+	currentDate: 'aktuální datum',
 	afterDate: 'Datum by mělo být stejné nebo větší než {label}.',
 	beforeDate: 'Datum by mělo být stejné nebo menší než {label}.',
 	startMonth: 'Vyberte počáteční měsíc.',
@@ -10307,7 +10753,7 @@ authors:
   - Henrik Hansen
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.da-DK.Date]
 
@@ -10376,7 +10822,7 @@ authors:
   - Martin Overgaard
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.da-DK.Form.Validator]
 
@@ -10410,7 +10856,7 @@ Locale.define('da-DK', 'FormValidator', {
 	match: 'Dette felt skal matche {matchName} feltet',
 	startDate: 'start dato',
 	endDate: 'slut dato',
-	currendDate: 'dags dato',
+	currentDate: 'dags dato',
 	afterDate: 'Datoen skal være større end eller lig med {label}.',
 	beforeDate: 'Datoen skal være mindre end eller lig med {label}.',
 	startMonth: 'Vælg en start måned',
@@ -10435,7 +10881,7 @@ authors:
   - Fabian Beiner
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.de-DE.Date]
 
@@ -10447,7 +10893,7 @@ Locale.define('de-DE', 'Date', {
 	months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
 	months_abbr: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
 	days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-	days_abbr: ['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.'],
+	days_abbr: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
 
 	// Culture's date order: DD.MM.YYYY
 	dateOrder: ['date', 'month', 'year'],
@@ -10504,8 +10950,8 @@ authors:
   - Michael van der Weg
 
 requires:
-  - /Locale
-  - /Locale.de-DE.Date
+  - Locale
+  - Locale.de-DE.Date
 
 provides: [Locale.de-CH.Date]
 
@@ -10528,7 +10974,7 @@ authors:
   - Michael van der Weg
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.de-CH.Form.Validator]
 
@@ -10562,7 +11008,7 @@ Locale.define('de-CH', 'FormValidator', {
 	match: 'Dieses Eingabefeld muss mit dem Feld {matchName} &uuml;bereinstimmen.',
 	startDate: 'Das Anfangsdatum',
 	endDate: 'Das Enddatum',
-	currendDate: 'Das aktuelle Datum',
+	currentDate: 'Das aktuelle Datum',
 	afterDate: 'Das Datum sollte zur gleichen Zeit oder sp&auml;ter sein {label}.',
 	beforeDate: 'Das Datum sollte zur gleichen Zeit oder fr&uuml;her sein {label}.',
 	startMonth: 'W&auml;hlen Sie bitte einen Anfangsmonat',
@@ -10587,7 +11033,7 @@ authors:
   - Fabian Beiner
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.de-DE.Form.Validator]
 
@@ -10621,7 +11067,7 @@ Locale.define('de-DE', 'FormValidator', {
 	match: 'Dieses Eingabefeld muss mit dem {matchName} Eingabefeld übereinstimmen.',
 	startDate: 'Das Anfangsdatum',
 	endDate: 'Das Enddatum',
-	currendDate: 'Das aktuelle Datum',
+	currentDate: 'Das aktuelle Datum',
 	afterDate: 'Das Datum sollte zur gleichen Zeit oder später sein als {label}.',
 	beforeDate: 'Das Datum sollte zur gleichen Zeit oder früher sein als {label}.',
 	startMonth: 'Wählen Sie bitte einen Anfangsmonat',
@@ -10644,7 +11090,7 @@ authors:
   - Arian Stolwijk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.EU.Number]
 
@@ -10676,8 +11122,8 @@ authors:
   - Christoph Pojer
 
 requires:
-  - /Locale
-  - /Locale.EU.Number
+  - Locale
+  - Locale.EU.Number
 
 provides: [Locale.de-DE.Number]
 
@@ -10690,32 +11136,73 @@ Locale.define('de-DE').inherit('EU', 'Number');
 /*
 ---
 
-name: Locale.en-GB.Date
+name: Locale.el-GR.Date
 
-description: Date messages for British English.
+description: Date messages for Greek language.
 
 license: MIT-style license
 
 authors:
-  - Aaron Newton
+  - Periklis Argiriadis
 
 requires:
-  - /Locale
-  - /Locale.en-US.Date
+  - Locale
 
-provides: [Locale.en-GB.Date]
+provides: [Locale.el-GR.Date]
 
 ...
 */
 
-Locale.define('en-GB', 'Date', {
+Locale.define('el-GR', 'Date', {
+
+	months: ['Ιανουάριος', 'Φεβρουάριος', 'Μάρτιος', 'Απρίλιος', 'Μάιος', 'Ιούνιος', 'Ιούλιος', 'Αύγουστος', 'Σεπτέμβριος', 'Οκτώβριος', 'Νοέμβριος', 'Δεκέμβριος'],
+	months_abbr: ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μάι', 'Ιουν', 'Ιουλ', 'Αυγ', 'Σεπ', 'Οκτ', 'Νοε', 'Δεκ'],
+	days: ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
+	days_abbr: ['Κυρ', 'Δευ', 'Τρι', 'Τετ', 'Πεμ', 'Παρ', 'Σαβ'],
 
 	// Culture's date order: DD/MM/YYYY
 	dateOrder: ['date', 'month', 'year'],
 	shortDate: '%d/%m/%Y',
-	shortTime: '%H:%M'
+	shortTime: '%I:%M%p',
+	AM: 'πμ',
+	PM: 'μμ',
+	firstDayOfWeek: 1,
 
-}).inherit('en-US', 'Date');
+	// Date.Extras
+	ordinal: function(dayOfMonth){
+		// 1st, 2nd, 3rd, etc.
+		return (dayOfMonth > 3 && dayOfMonth < 21) ? 'ος' : ['ος'][Math.min(dayOfMonth % 10, 4)];
+	},
+
+	lessThanMinuteAgo: 'λιγότερο από ένα λεπτό πριν',
+	minuteAgo: 'περίπου ένα λεπτό πριν',
+	minutesAgo: '{delta} λεπτά πριν',
+	hourAgo: 'περίπου μια ώρα πριν',
+	hoursAgo: 'περίπου {delta} ώρες πριν',
+	dayAgo: '1 ημέρα πριν',
+	daysAgo: '{delta} ημέρες πριν',
+	weekAgo: '1 εβδομάδα πριν',
+	weeksAgo: '{delta} εβδομάδες πριν',
+	monthAgo: '1 μήνα πριν',
+	monthsAgo: '{delta} μήνες πριν',
+	yearAgo: '1 χρόνο πριν',
+	yearsAgo: '{delta} χρόνια πριν',
+
+	lessThanMinuteUntil: 'λιγότερο από λεπτό από τώρα',
+	minuteUntil: 'περίπου ένα λεπτό από τώρα',
+	minutesUntil: '{delta} λεπτά από τώρα',
+	hourUntil: 'περίπου μια ώρα από τώρα',
+	hoursUntil: 'περίπου {delta} ώρες από τώρα',
+	dayUntil: '1 ημέρα από τώρα',
+	daysUntil: '{delta} ημέρες από τώρα',
+	weekUntil: '1 εβδομάδα από τώρα',
+	weeksUntil: '{delta} εβδομάδες από τώρα',
+	monthUntil: '1 μήνας από τώρα',
+	monthsUntil: '{delta} μήνες από τώρα',
+	yearUntil: '1 χρόνος από τώρα',
+	yearsUntil: '{delta} χρόνια από τώρα'
+
+});
 
 
 /*
@@ -10731,7 +11218,7 @@ authors:
   - Ãlfons Sanchez
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.es-ES.Date]
 
@@ -10801,8 +11288,8 @@ authors:
   - Diego Massanti
 
 requires:
-  - /Locale
-  - /Locale.es-ES.Date
+  - Locale
+  - Locale.es-ES.Date
 
 provides: [Locale.es-AR.Date]
 
@@ -10825,7 +11312,7 @@ authors:
   - Diego Massanti
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.es-AR.Form.Validator]
 
@@ -10859,7 +11346,7 @@ Locale.define('es-AR', 'FormValidator', {
 	match: 'Este campo necesita coincidir con el campo {matchName}',
 	startDate: 'la fecha de inicio',
 	endDate: 'la fecha de fin',
-	currendDate: 'la fecha actual',
+	currentDate: 'la fecha actual',
 	afterDate: 'La fecha debe ser igual o posterior a {label}.',
 	beforeDate: 'La fecha debe ser igual o anterior a {label}.',
 	startMonth: 'Por favor selecciona un mes de origen',
@@ -10881,7 +11368,7 @@ authors:
   - Ãlfons Sanchez
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.es-ES.Form.Validator]
 
@@ -10915,11 +11402,117 @@ Locale.define('es-ES', 'FormValidator', {
 	match: 'Este campo necesita coincidir con el campo {matchName}',
 	startDate: 'la fecha de inicio',
 	endDate: 'la fecha de fin',
-	currendDate: 'la fecha actual',
+	currentDate: 'la fecha actual',
 	afterDate: 'La fecha debe ser igual o posterior a {label}.',
 	beforeDate: 'La fecha debe ser igual o anterior a {label}.',
 	startMonth: 'Por favor selecciona un mes de origen',
 	sameMonth: 'Estas dos fechas deben estar en el mismo mes - debes cambiar una u otra.'
+
+});
+
+
+/*
+---
+
+name: Locale.es-VE.Date
+
+description: Date messages for Spanish (Venezuela).
+
+license: MIT-style license
+
+authors:
+  - Daniel Barreto
+
+requires:
+  - Locale
+  - Locale.es-ES.Date
+
+provides: [Locale.es-VE.Date]
+
+...
+*/
+
+Locale.define('es-VE').inherit('es-ES', 'Date');
+
+
+/*
+---
+
+name: Locale.es-VE.Form.Validator
+
+description: Form Validator messages for Spanish (Venezuela).
+
+license: MIT-style license
+
+authors:
+  - Daniel Barreto
+
+requires:
+  - Locale
+  - Locale.es-ES.Form.Validator
+
+provides: [Locale.es-VE.Form.Validator]
+
+...
+*/
+
+Locale.define('es-VE', 'FormValidator', {
+
+	digits: 'Por favor usa solo n&uacute;meros y puntuaci&oacute;n en este campo. Por ejemplo, un n&uacute;mero de tel&eacute;fono con guiones y puntos no esta permitido.',
+	alpha: 'Por favor usa solo letras (a-z) en este campo. No se admiten espacios ni otros caracteres.',
+	currencyDollar: 'Por favor introduce una cantidad v&aacute;lida de Bs. Por ejemplo Bs. 100,00 .',
+	oneRequired: 'Por favor introduce un valor para por lo menos una de estas entradas.',
+
+	// Form.Validator.Extras
+	startDate: 'La fecha de inicio',
+	endDate: 'La fecha de fin',
+	currentDate: 'La fecha actual'
+
+}).inherit('es-ES', 'FormValidator');
+
+
+/*
+---
+
+name: Locale.es-VE.Number
+
+description: Number messages for Spanish (Venezuela).
+
+license: MIT-style license
+
+authors:
+  - Daniel Barreto
+
+requires:
+  - Locale
+
+provides: [Locale.es-VE.Number]
+
+...
+*/
+
+Locale.define('es-VE', 'Number', {
+
+	decimal: ',',
+	group: '.',
+/*
+	decimals: 0,
+	precision: 0,
+*/
+	// Negative/Currency/percentage will mixin Number
+	negative: {
+		prefix: '-'
+	},
+
+	currency: {
+		decimals: 2,
+		prefix: 'Bs. '
+	},
+
+	percentage: {
+		decimals: 2,
+		suffix: '%'
+	}
 
 });
 
@@ -10937,7 +11530,7 @@ authors:
   - Kevin Valdek
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.et-EE.Date]
 
@@ -11006,7 +11599,7 @@ authors:
   - Kevin Valdek
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.et-EE.Form.Validator]
 
@@ -11040,7 +11633,7 @@ Locale.define('et-EE', 'FormValidator', {
 	match: 'Väli peab sobima {matchName} väljaga',
 	startDate: 'algkuupäev',
 	endDate: 'lõppkuupäev',
-	currendDate: 'praegune kuupäev',
+	currentDate: 'praegune kuupäev',
 	afterDate: 'Kuupäev peab olema võrdne või pärast {label}.',
 	beforeDate: 'Kuupäev peab olema võrdne või enne {label}.',
 	startMonth: 'Palun valige algkuupäev.',
@@ -11062,7 +11655,7 @@ authors:
   - Amir Hossein Hodjaty Pour
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fa.Date]
 
@@ -11130,7 +11723,7 @@ authors:
   - Amir Hossein Hodjaty Pour
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fa.Form.Validator]
 
@@ -11164,7 +11757,7 @@ Locale.define('fa', 'FormValidator', {
 	match: 'این فیلد باید با فیلد {matchName} مطابقت داشته باشد.',
 	startDate: 'تاریخ شروع',
 	endDate: 'تاریخ پایان',
-	currendDate: 'تاریخ کنونی',
+	currentDate: 'تاریخ کنونی',
 	afterDate: 'تاریخ میبایست برابر یا بعد از {label} باشد',
 	beforeDate: 'تاریخ میبایست برابر یا قبل از {label} باشد',
 	startMonth: 'لطفا ماه شروع را انتخاب کنید',
@@ -11187,7 +11780,7 @@ authors:
   - ksel
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fi-FI.Date]
 
@@ -11261,7 +11854,7 @@ authors:
   - ksel
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fi-FI.Form.Validator]
 
@@ -11295,7 +11888,7 @@ Locale.define('fi-FI', 'FormValidator', {
 	match: 'Tämän kentän tulee vastata kenttää {matchName}',
 	startDate: 'alkupäivämäärä',
 	endDate: 'loppupäivämäärä',
-	currendDate: 'nykyinen päivämäärä',
+	currentDate: 'nykyinen päivämäärä',
 	afterDate: 'Päivämäärän tulisi olla sama tai myöhäisempi ajankohta kuin {label}.',
 	beforeDate: 'Päivämäärän tulisi olla sama tai aikaisempi ajankohta kuin {label}.',
 	startMonth: 'Ole hyvä ja valitse aloituskuukausi',
@@ -11318,8 +11911,8 @@ authors:
   - ksel
 
 requires:
-  - /Locale
-  - /Locale.EU.Number
+  - Locale
+  - Locale.EU.Number
 
 provides: [Locale.fi-FI.Number]
 
@@ -11347,7 +11940,7 @@ authors:
   - Antoine Abt
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fr-FR.Date]
 
@@ -11419,7 +12012,7 @@ authors:
   - Nicolas Sorosac
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.fr-FR.Form.Validator]
 
@@ -11439,9 +12032,9 @@ Locale.define('fr-FR', 'FormValidator', {
 	alphanum: 'Veuillez saisir uniquement des lettres (a-z) ou des chiffres (0-9) dans ce champ. Les espaces ou autres caract&egrave;res ne sont pas autoris&eacute;s.',
 	dateSuchAs: 'Veuillez saisir une date correcte comme {date}',
 	dateInFormatMDY: 'Veuillez saisir une date correcte, au format JJ/MM/AAAA (ex : "31/11/1999").',
-	email: 'Veuillez saisir une adresse de courrier &eacute;lectronique. Par example "fred@domaine.com".',
-	url: 'Veuillez saisir une URL, comme http://www.example.com.',
-	currencyDollar: 'Veuillez saisir une quantit&eacute; correcte. Par example 100,00&euro;.',
+	email: 'Veuillez saisir une adresse de courrier &eacute;lectronique. Par exemple "fred@domaine.com".',
+	url: 'Veuillez saisir une URL, comme http://www.exemple.com.',
+	currencyDollar: 'Veuillez saisir une quantit&eacute; correcte. Par exemple 100,00&euro;.',
 	oneRequired: 'Veuillez s&eacute;lectionner au moins une de ces options.',
 	errorPrefix: 'Erreur : ',
 	warningPrefix: 'Attention : ',
@@ -11454,7 +12047,7 @@ Locale.define('fr-FR', 'FormValidator', {
 	match: 'Ce champ doit correspondre avec le champ {matchName}.',
 	startDate: 'date de d&eacute;but',
 	endDate: 'date de fin',
-	currendDate: 'date actuelle',
+	currentDate: 'date actuelle',
 	afterDate: 'La date doit &ecirc;tre identique ou post&eacute;rieure &agrave; {label}.',
 	beforeDate: 'La date doit &ecirc;tre identique ou ant&eacute;rieure &agrave; {label}.',
 	startMonth: 'Veuillez s&eacute;lectionner un mois de d&eacute;but.',
@@ -11478,8 +12071,8 @@ authors:
   - sv1l
 
 requires:
-  - /Locale
-  - /Locale.EU.Number
+  - Locale
+  - Locale.EU.Number
 
 provides: [Locale.fr-FR.Number]
 
@@ -11506,7 +12099,7 @@ authors:
   - Elad Ossadon
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.he-IL.Date]
 
@@ -11575,7 +12168,7 @@ authors:
   - Elad Ossadon
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.he-IL.Form.Validator]
 
@@ -11609,7 +12202,7 @@ Locale.define('he-IL', 'FormValidator', {
 	match: 'שדה זה צריך להתאים לשדה {matchName}',
 	startDate: 'תאריך ההתחלה',
 	endDate: 'תאריך הסיום',
-	currendDate: 'התאריך הנוכחי',
+	currentDate: 'התאריך הנוכחי',
 	afterDate: 'התאריך צריך להיות זהה או אחרי {label}.',
 	beforeDate: 'התאריך צריך להיות זהה או לפני {label}.',
 	startMonth: 'נא לבחור חודש התחלה',
@@ -11632,7 +12225,7 @@ authors:
   - Elad Ossadon
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.he-IL.Number]
 
@@ -11664,7 +12257,7 @@ authors:
   - Zsolt Szegheő
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.hu-HU.Date]
 
@@ -11733,7 +12326,7 @@ authors:
   - Zsolt Szegheő
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.hu-HU.Form.Validator]
 
@@ -11767,7 +12360,7 @@ Locale.define('hu-HU', 'FormValidator', {
 	match: 'A mezőnek egyeznie kell a(z) {matchName} mezővel.',
 	startDate: 'a kezdet dátuma',
 	endDate: 'a vég dátuma',
-	currendDate: 'jelenlegi dátum',
+	currentDate: 'jelenlegi dátum',
 	afterDate: 'A dátum nem lehet kisebb, mint {label}.',
 	beforeDate: 'A dátum nem lehet nagyobb, mint {label}.',
 	startMonth: 'Kezdeti hónap megadása szükséges.',
@@ -11791,7 +12384,7 @@ authors:
   - Valerio Proietti
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.it-IT.Date]
 
@@ -11861,7 +12454,7 @@ authors:
   - Andrea Novero
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.it-IT.Form.Validator]
 
@@ -11895,7 +12488,7 @@ Locale.define('it-IT', 'FormValidator', {
 	match: 'Il valore deve corrispondere al campo {matchName}',
 	startDate: "data d'inizio",
 	endDate: 'data di fine',
-	currendDate: 'data attuale',
+	currentDate: 'data attuale',
 	afterDate: 'La data deve corrispondere o essere successiva al {label}.',
 	beforeDate: 'La data deve corrispondere o essere precedente al {label}.',
 	startMonth: "Selezionare un mese d'inizio",
@@ -11917,7 +12510,7 @@ authors:
   - Noritaka Horio
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ja-JP.Date]
 
@@ -11986,7 +12579,7 @@ authors:
   - Noritaka Horio
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ja-JP.Form.Validator]
 
@@ -12020,7 +12613,7 @@ Locale.define("ja-JP", "FormValidator", {
 	match: '{matchName}が入力されている場合必須です。',
 	startDate: '開始日',
 	endDate: '終了日',
-	currendDate: '今日',
+	currentDate: '今日',
 	afterDate: '{label}以降の日付にしてください。',
 	beforeDate: '{label}以前の日付にしてください。',
 	startMonth: '開始月を選択してください。',
@@ -12042,7 +12635,7 @@ authors:
   - Noritaka Horio
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ja-JP.Number]
 
@@ -12076,7 +12669,7 @@ authors:
   - Tim Wienk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.nl-NL.Date]
 
@@ -12147,7 +12740,7 @@ authors:
   - Tim Wienk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.nl-NL.Form.Validator]
 
@@ -12182,7 +12775,7 @@ Locale.define('nl-NL', 'FormValidator', {
 	match: 'Dit veld moet overeen komen met het {matchName} veld',
 	startDate: 'de begin datum',
 	endDate: 'de eind datum',
-	currendDate: 'de huidige datum',
+	currentDate: 'de huidige datum',
 	afterDate: 'De datum moet hetzelfde of na {label} zijn.',
 	beforeDate: 'De datum moet hetzelfde of voor {label} zijn.',
 	startMonth: 'Selecteer een begin maand',
@@ -12205,8 +12798,8 @@ authors:
   - Arian Stolwijk
 
 requires:
-  - /Locale
-  - /Locale.EU.Number
+  - Locale
+  - Locale.EU.Number
 
 provides: [Locale.nl-NL.Number]
 
@@ -12230,9 +12823,9 @@ license: MIT-style license
 
 authors:
   - Espen 'Rexxars' Hovlandsdal
-
+  - Ole Tøsse Kolvik
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.no-NO.Date]
 
@@ -12240,6 +12833,10 @@ provides: [Locale.no-NO.Date]
 */
 
 Locale.define('no-NO', 'Date', {
+	months: ['Januar', 'Februar', 'Mars', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Desember'],
+	months_abbr: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+	days: ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
+	days_abbr: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
 
 	// Culture's date order: DD.MM.YYYY
 	dateOrder: ['date', 'month', 'year'],
@@ -12249,14 +12846,33 @@ Locale.define('no-NO', 'Date', {
 	PM: 'PM',
 	firstDayOfWeek: 1,
 
-	lessThanMinuteAgo: 'kortere enn et minutt siden',
+	lessThanMinuteAgo: 'mindre enn et minutt siden',
 	minuteAgo: 'omtrent et minutt siden',
 	minutesAgo: '{delta} minutter siden',
 	hourAgo: 'omtrent en time siden',
 	hoursAgo: 'omtrent {delta} timer siden',
 	dayAgo: '{delta} dag siden',
-	daysAgo: '{delta} dager siden'
+	daysAgo: '{delta} dager siden',
+	weekAgo: 'en uke siden',
+	weeksAgo: '{delta} uker siden',
+	monthAgo: 'en måned siden',
+	monthsAgo: '{delta} måneder siden',
+	yearAgo: 'ett år siden',
+	yearsAgo: '{delta} år siden',
 
+	lessThanMinuteUntil: 'mindre enn et minutt til',
+	minuteUntil: 'omtrent et minutt til',
+	minutesUntil: '{delta} minutter til',
+	hourUntil: 'omtrent en time til',
+	hoursUntil: 'omtrent {delta} timer til',
+	dayUntil: 'en dag til',
+	daysUntil: '{delta} dager til',
+	weekUntil: 'en uke til',
+	weeksUntil: '{delta} uker til',
+	monthUntil: 'en måned til',
+	monthsUntil: '{delta} måneder til',
+	yearUntil: 'et år til',
+	yearsUntil: '{delta} år til'
 });
 
 
@@ -12273,7 +12889,7 @@ authors:
   - Espen 'Rexxars' Hovlandsdal
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.no-NO.Form.Validator]
 
@@ -12315,7 +12931,7 @@ authors:
   - Oskar Krawczyk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.pl-PL.Date]
 
@@ -12374,7 +12990,7 @@ authors:
   - Oskar Krawczyk
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.pl-PL.Form.Validator]
 
@@ -12408,7 +13024,7 @@ Locale.define('pl-PL', 'FormValidator', {
 	match: 'To pole musi być takie samo jak {matchName}',
 	startDate: 'data początkowa',
 	endDate: 'data końcowa',
-	currendDate: 'aktualna data',
+	currentDate: 'aktualna data',
 	afterDate: 'Podana data poinna być taka sama lub po {label}.',
 	beforeDate: 'Podana data poinna być taka sama lub przed {label}.',
 	startMonth: 'Prosimy wybrać początkowy miesiąc.',
@@ -12430,7 +13046,7 @@ authors:
   - Fabio Miranda Costa
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.pt-PT.Date]
 
@@ -12499,8 +13115,8 @@ authors:
   - Fabio Miranda Costa
 
 requires:
-  - /Locale
-  - /Locale.pt-PT.Date
+  - Locale
+  - Locale.pt-PT.Date
 
 provides: [Locale.pt-BR.Date]
 
@@ -12528,7 +13144,7 @@ authors:
   - Fábio Miranda Costa
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.pt-BR.Form.Validator]
 
@@ -12562,7 +13178,7 @@ Locale.define('pt-BR', 'FormValidator', {
 	match: 'Este campo deve ser igual ao campo {matchName}.',
 	startDate: 'a data inicial',
 	endDate: 'a data final',
-	currendDate: 'a data atual',
+	currentDate: 'a data atual',
 	afterDate: 'A data deve ser igual ou posterior a {label}.',
 	beforeDate: 'A data deve ser igual ou anterior a {label}.',
 	startMonth: 'Por favor selecione uma data inicial.',
@@ -12570,6 +13186,41 @@ Locale.define('pt-BR', 'FormValidator', {
 	creditcard: 'O número do cartão de crédito informado é inválido. Por favor verifique o valor e tente novamente. {length} números informados.'
 
 });
+
+
+/*
+---
+
+name: Locale.pt-BR.Number
+
+description: Number messages for PT Brazilian.
+
+license: MIT-style license
+
+authors:
+  - Arian Stolwijk
+  - Danillo César
+
+requires:
+  - Locale
+
+provides: [Locale.pt-BR.Number]
+
+...
+*/
+
+Locale.define('pt-BR', 'Number', {
+
+	decimal: ',',
+	group: '.',
+
+	currency: {
+		prefix: 'R$ '
+	}
+
+});
+
+
 
 
 /*
@@ -12585,7 +13236,7 @@ authors:
   - Miquel Hudin
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.pt-PT.Form.Validator]
 
@@ -12628,7 +13279,7 @@ authors:
   - Kuryanovich Egor
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ru-RU.Date]
 
@@ -12685,13 +13336,13 @@ Locale.define('ru-RU', 'Date', {
 	weekAgo: 'неделю назад',
 	weeksAgo: function(delta){ return '{delta} ' + pluralize(delta, 'неделя', 'недели', 'недель') + ' назад'; },
 	monthAgo: 'месяц назад',
-	monthsAgo: function(delta){ return '{delta} ' + pluralize(delta, 'месяц', 'месяца', 'месецев') + ' назад'; },
+	monthsAgo: function(delta){ return '{delta} ' + pluralize(delta, 'месяц', 'месяца', 'месяцев') + ' назад'; },
 	yearAgo: 'год назад',
 	yearsAgo: function(delta){ return '{delta} ' + pluralize(delta, 'год', 'года', 'лет') + ' назад'; },
 
 	lessThanMinuteUntil: 'меньше чем через минуту',
 	minuteUntil: 'через минуту',
-	minutesUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'час', 'часа', 'часов') + ''; },
+	minutesUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'минуту', 'минуты', 'минут') + ''; },
 	hourUntil: 'через час',
 	hoursUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'час', 'часа', 'часов') + ''; },
 	dayUntil: 'завтра',
@@ -12699,7 +13350,7 @@ Locale.define('ru-RU', 'Date', {
 	weekUntil: 'через неделю',
 	weeksUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'неделю', 'недели', 'недель') + ''; },
 	monthUntil: 'через месяц',
-	monthsUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'месяц', 'месяца', 'месецев') + ''; },
+	monthsUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'месяц', 'месяца', 'месяцев') + ''; },
 	yearUntil: 'через',
 	yearsUntil: function(delta){ return 'через {delta} ' + pluralize(delta, 'год', 'года', 'лет') + ''; }
 
@@ -12723,7 +13374,7 @@ authors:
   - Chernodarov Egor
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.ru-RU.Form.Validator]
 
@@ -12757,6 +13408,144 @@ Locale.define('ru-RU', 'FormValidator', {
 /*
 ---
 
+name: Locale.sk-SK.Date
+
+description: Date messages for Slovak.
+
+license: MIT-style license
+
+authors:
+  - Ivan Masár
+
+requires:
+  - Locale
+
+provides: [Locale.sk-SK.Date]
+
+...
+*/
+(function(){
+
+// Slovak language pluralization rules, see http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
+// one -> n is 1;            1
+// few -> n in 2..4;         2-4
+// other -> everything else  0, 5-999, 1.31, 2.31, 5.31...
+var pluralize = function (n, one, few, other){
+	if (n == 1) return one;
+	else if (n == 2 || n == 3 || n == 4) return few;
+	else return other;
+};
+
+Locale.define('sk-SK', 'Date', {
+
+	months: ['Január', 'Február', 'Marec', 'Apríl', 'Máj', 'Jún', 'Júl', 'August', 'September', 'Október', 'November', 'December'],
+	months_abbr: ['januára', 'februára', 'marca', 'apríla', 'mája', 'júna', 'júla', 'augusta', 'septembra', 'októbra', 'novembra', 'decembra'],
+	days: ['Nedele', 'Pondelí', 'Úterý', 'Streda', 'Čtvrtek', 'Pátek', 'Sobota'],
+	days_abbr: ['ne', 'po', 'ut', 'st', 'št', 'pi', 'so'],
+
+	// Culture's date order: DD.MM.YYYY
+	dateOrder: ['date', 'month', 'year'],
+	shortDate: '%d.%m.%Y',
+	shortTime: '%H:%M',
+	AM: 'dop.',
+	PM: 'pop.',
+	firstDayOfWeek: 1,
+
+	// Date.Extras
+	ordinal: '.',
+
+	lessThanMinuteAgo: 'pred chvíľou',
+	minuteAgo: 'približne pred minútou',
+	minutesAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'minútou', 'minútami', 'minútami'); },
+	hourAgo: 'približne pred hodinou',
+	hoursAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'hodinou', 'hodinami', 'hodinami'); },
+	dayAgo: 'pred dňom',
+	daysAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'dňom', 'dňami', 'dňami'); },
+	weekAgo: 'pred týždňom',
+	weeksAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'týždňom', 'týždňami', 'týždňami'); },
+	monthAgo: 'pred mesiacom',
+	monthsAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'mesiacom', 'mesiacmi', 'mesiacmi'); },
+	yearAgo: 'pred rokom',
+	yearsAgo: function(delta){ return 'pred {delta} ' + pluralize(delta, 'rokom', 'rokmi', 'rokmi'); },
+
+	lessThanMinuteUntil: 'o chvíľu',
+	minuteUntil: 'približne o minútu',
+	minutesUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'minútu', 'minúty', 'minúty'); },
+	hourUntil: 'približne o hodinu',
+	hoursUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'hodinu', 'hodiny', 'hodín'); },
+	dayUntil: 'o deň',
+	daysUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'deň', 'dni', 'dní'); },
+	weekUntil: 'o týždeň',
+	weeksUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'týždeň', 'týždne', 'týždňov'); },
+	monthUntil: 'o mesiac',
+	monthsUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'mesiac', 'mesiace', 'mesiacov'); },
+	yearUntil: 'o rok',
+	yearsUntil: function(delta){ return 'o {delta} ' + pluralize(delta, 'rok', 'roky', 'rokov'); }
+});
+
+})();
+
+
+/*
+---
+
+name: Locale.sk-SK.Form.Validator
+
+description: Form Validator messages for Czech.
+
+license: MIT-style license
+
+authors:
+  - Ivan Masár
+
+requires:
+  - Locale
+
+provides: [Locale.sk-SK.Form.Validator]
+
+...
+*/
+
+Locale.define('sk-SK', 'FormValidator', {
+
+	required: 'Táto položka je povinná.',
+	minLength: 'Zadajte prosím aspoň {minLength} znakov (momentálne {length} znakov).',
+	maxLength: 'Zadajte prosím menej ako {maxLength} znakov (momentálne {length} znakov).',
+	integer: 'Zadajte prosím celé číslo. Desetinné čísla (napr. 1.25) nie sú povolené.',
+	numeric: 'Zadajte len číselné hodnoty (t.j. „1“ alebo „1.1“ alebo „-1“ alebo „-1.1“).',
+	digits: 'Zadajte prosím len čísla a interpunkčné znamienka (napríklad telefónne číslo s pomlčkami albo bodkami je povolené).',
+	alpha: 'Zadajte prosím len písmená (a-z). Medzery alebo iné znaky nie sú povolené.',
+	alphanum: 'Zadajte prosím len písmená (a-z) alebo číslice (0-9). Medzery alebo iné znaky nie sú povolené.',
+	dateSuchAs: 'Zadajte prosím platný dátum v tvare {date}',
+	dateInFormatMDY: 'Zadajte prosím platný datum v tvare MM / DD / RRRR (t.j. „12/31/1999“)',
+	email: 'Zadajte prosím platnú emailovú adresu. Napríklad „fred@domain.com“.',
+	url: 'Zadajte prosím platnoú adresu URL v tvare http://www.example.com.',
+	currencyDollar: 'Zadajte prosím platnú čiastku. Napríklad $100.00.',
+	oneRequired: 'Zadajte prosím aspoň jednu hodnotu z týchto položiek.',
+	errorPrefix: 'Chyba: ',
+	warningPrefix: 'Upozornenie: ',
+
+	// Form.Validator.Extras
+	noSpace: 'V tejto položle nie sú povolené medzery',
+	reqChkByNode: 'Nie sú vybrané žiadne položky.',
+	requiredChk: 'Táto položka je povinná.',
+	reqChkByName: 'Prosím vyberte {label}.',
+	match: 'Táto položka sa musí zhodovať s položkou {matchName}',
+	startDate: 'dátum začiatku',
+	endDate: 'dátum ukončenia',
+	currendDate: 'aktuálny dátum',
+	afterDate: 'Dátum by mal býť rovnaký alebo väčší ako {label}.',
+	beforeDate: 'Dátum by mal byť rovnaký alebo menší ako {label}.',
+	startMonth: 'Vyberte počiatočný mesiac.',
+	sameMonth: 'Tieto dva dátumy musia býť v rovnakom mesiaci - zmeňte jeden z nich.',
+	creditcard: 'Zadané číslo kreditnej karty je neplatné. Prosím, opravte ho. Bolo zadaných {length} číslic.'
+
+});
+
+
+/*
+---
+
 name: Locale.si-SI.Date
 
 description: Date messages for Slovenian.
@@ -12767,7 +13556,7 @@ authors:
   - Radovan Lozej
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.si-SI.Date]
 
@@ -12780,7 +13569,7 @@ var pluralize = function(n, one, two, three, other){
 	return (n >= 1 && n <= 3) ? arguments[n] : other;
 };
 
-Locale.define('si-SI', 'Date', {
+Locale.define('sl-SI', 'Date', {
 
 	months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
 	months_abbr: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec'],
@@ -12844,14 +13633,14 @@ authors:
   - Radovan Lozej
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.si-SI.Form.Validator]
 
 ...
 */
 
-Locale.define('si-SI', 'FormValidator', {
+Locale.define('sl-SI', 'FormValidator', {
 
 	required: 'To polje je obvezno',
 	minLength: 'Prosim, vnesite vsaj {minLength} znakov (vnesli ste {length} znakov).',
@@ -12878,7 +13667,7 @@ Locale.define('si-SI', 'FormValidator', {
 	match: 'To polje se mora ujemati z poljem {matchName}',
 	startDate: 'datum začetka',
 	endDate: 'datum konca',
-	currendDate: 'trenuten datum',
+	currentDate: 'trenuten datum',
 	afterDate: 'Datum bi moral biti isti ali po {label}.',
 	beforeDate: 'Datum bi moral biti isti ali pred {label}.',
 	startMonth: 'Prosim, vnesite začetni datum',
@@ -12901,7 +13690,7 @@ authors:
   - Martin Lundgren
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.sv-SE.Date]
 
@@ -12958,7 +13747,7 @@ authors:
   - Martin Lundgren
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.sv-SE.Form.Validator]
 
@@ -12992,13 +13781,201 @@ Locale.define('sv-SE', 'FormValidator', {
 	match: 'Detta fält måste matcha {matchName}',
 	startDate: 'startdatumet',
 	endDate: 'slutdatum',
-	currendDate: 'dagens datum',
+	currentDate: 'dagens datum',
 	afterDate: 'Datumet bör vara samma eller senare än {label}.',
 	beforeDate: 'Datumet bör vara samma eller tidigare än {label}.',
 	startMonth: 'Välj en start månad',
 	sameMonth: 'Dessa två datum måste vara i samma månad - du måste ändra det ena eller det andra.'
 
 });
+
+
+/*
+---
+
+name: Locale.sv-SE.Number
+
+description: Number messages for Swedish.
+
+license: MIT-style license
+
+authors:
+  - Arian Stolwijk
+  - Martin Lundgren
+
+requires:
+  - Locale
+  - Locale.EU.Number
+
+provides: [Locale.sv-SE.Number]
+
+...
+*/
+
+Locale.define('sv-SE', 'Number', {
+
+	currency: {
+		prefix: 'SEK '
+	}
+
+}).inherit('EU', 'Number');
+
+
+/*
+---
+
+name: Locale.tr-TR.Date
+
+description: Date messages for Turkish.
+
+license: MIT-style license
+
+authors:
+  - Faruk Can Bilir
+
+requires:
+  - Locale
+
+provides: [Locale.tr-TR.Date]
+
+...
+*/
+
+Locale.define('tr-TR', 'Date', {
+
+	months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+	months_abbr: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+	days: ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+	days_abbr: ['Pa', 'Pzt', 'Sa', 'Ça', 'Pe', 'Cu', 'Cmt'],
+
+	// Culture's date order: MM/DD/YYYY
+	dateOrder: ['date', 'month', 'year'],
+	shortDate: '%d/%m/%Y',
+	shortTime: '%H.%M',
+	AM: 'AM',
+	PM: 'PM',
+	firstDayOfWeek: 1,
+
+	// Date.Extras
+	ordinal: '',
+
+	lessThanMinuteAgo: 'bir dakikadan önce',
+	minuteAgo: 'yaklaşık bir dakika önce',
+	minutesAgo: '{delta} dakika önce',
+	hourAgo: 'bir saat kadar önce',
+	hoursAgo: '{delta} saat kadar önce',
+	dayAgo: 'bir gün önce',
+	daysAgo: '{delta} gün önce',
+	weekAgo: 'bir hafta önce',
+	weeksAgo: '{delta} hafta önce',
+	monthAgo: 'bir ay önce',
+	monthsAgo: '{delta} ay önce',
+	yearAgo: 'bir yıl önce',
+	yearsAgo: '{delta} yıl önce',
+
+	lessThanMinuteUntil: 'bir dakikadan az sonra',
+	minuteUntil: 'bir dakika kadar sonra',
+	minutesUntil: '{delta} dakika sonra',
+	hourUntil: 'bir saat kadar sonra',
+	hoursUntil: '{delta} saat kadar sonra',
+	dayUntil: 'bir gün sonra',
+	daysUntil: '{delta} gün sonra',
+	weekUntil: 'bir hafta sonra',
+	weeksUntil: '{delta} hafta sonra',
+	monthUntil: 'bir ay sonra',
+	monthsUntil: '{delta} ay sonra',
+	yearUntil: 'bir yıl sonra',
+	yearsUntil: '{delta} yıl sonra'
+
+});
+
+
+/*
+---
+
+name: Locale.tr-TR.Form.Validator
+
+description: Form Validator messages for Turkish.
+
+license: MIT-style license
+
+authors:
+  - Faruk Can Bilir
+
+requires:
+  - Locale
+
+provides: [Locale.tr-TR.Form.Validator]
+
+...
+*/
+
+Locale.define('tr-TR', 'FormValidator', {
+
+	required: 'Bu alan zorunlu.',
+	minLength: 'Lütfen en az {minLength} karakter girin (siz {length} karakter girdiniz).',
+	maxLength: 'Lütfen en fazla {maxLength} karakter girin (siz {length} karakter girdiniz).',
+	integer: 'Lütfen bu alana sadece tamsayı girin. Ondalıklı sayılar (ör: 1.25) kullanılamaz.',
+	numeric: 'Lütfen bu alana sadece sayısal değer girin (ör: "1", "1.1", "-1" ya da "-1.1").',
+	digits: 'Lütfen bu alana sadece sayısal değer ve noktalama işareti girin (örneğin, nokta ve tire içeren bir telefon numarası kullanılabilir).',
+	alpha: 'Lütfen bu alanda yalnızca harf kullanın. Boşluk ve diğer karakterler kullanılamaz.',
+	alphanum: 'Lütfen bu alanda sadece harf ve rakam kullanın. Boşluk ve diğer karakterler kullanılamaz.',
+	dateSuchAs: 'Lütfen geçerli bir tarih girin (Ör: {date})',
+	dateInFormatMDY: 'Lütfen geçerli bir tarih girin (GG/AA/YYYY, ör: "31/12/1999")',
+	email: 'Lütfen geçerli bir email adresi girin. Ör: "kemal@etikan.com".',
+	url: 'Lütfen geçerli bir URL girin. Ör: http://www.example.com.',
+	currencyDollar: 'Lütfen geçerli bir TL miktarı girin. Ör: 100,00 TL .',
+	oneRequired: 'Lütfen en az bir tanesini doldurun.',
+	errorPrefix: 'Hata: ',
+	warningPrefix: 'Uyarı: ',
+
+	// Form.Validator.Extras
+	noSpace: 'Bu alanda boşluk kullanılamaz.',
+	reqChkByNode: 'Hiçbir öğe seçilmemiş.',
+	requiredChk: 'Bu alan zorunlu.',
+	reqChkByName: 'Lütfen bir {label} girin.',
+	match: 'Bu alan, {matchName} alanıyla uyuşmalı',
+	startDate: 'başlangıç tarihi',
+	endDate: 'bitiş tarihi',
+	currentDate: 'bugünün tarihi',
+	afterDate: 'Tarih, {label} tarihiyle aynı gün ya da ondan sonra olmalıdır.',
+	beforeDate: 'Tarih, {label} tarihiyle aynı gün ya da ondan önce olmalıdır.',
+	startMonth: 'Lütfen bir başlangıç ayı seçin',
+	sameMonth: 'Bu iki tarih aynı ayda olmalı - bir tanesini değiştirmeniz gerekiyor.',
+	creditcard: 'Girdiğiniz kredi kartı numarası geçersiz. Lütfen kontrol edip tekrar deneyin. {length} hane girildi.'
+
+});
+
+
+/*
+---
+
+name: Locale.tr-TR.Number
+
+description: Number messages for Turkish.
+
+license: MIT-style license
+
+authors:
+  - Faruk Can Bilir
+
+requires:
+  - Locale
+  - Locale.EU.Number
+
+provides: [Locale.tr-TR.Number]
+
+...
+*/
+
+Locale.define('tr-TR', 'Number', {
+
+	currency: {
+		decimals: 0,
+		suffix: ' TL'
+	}
+
+}).inherit('EU', 'Number');
 
 
 /*
@@ -13014,7 +13991,7 @@ authors:
   - Slik
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.uk-UA.Date]
 
@@ -13098,7 +14075,7 @@ authors:
   - Slik
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.uk-UA.Form.Validator]
 
@@ -13131,7 +14108,7 @@ Locale.define('uk-UA', 'FormValidator', {
 	match: 'Це поле повинно відповідати {matchName}',
 	startDate: 'початкова дата',
 	endDate: 'кінцева дата',
-	currendDate: 'сьогоднішня дата',
+	currentDate: 'сьогоднішня дата',
 	afterDate: 'Ця дата повинна бути такою ж, або пізнішою за {label}.',
 	beforeDate: 'Ця дата повинна бути такою ж, або ранішою за {label}.',
 	startMonth: 'Будь ласка, виберіть початковий місяць',
@@ -13154,7 +14131,7 @@ authors:
   - YMind Chan
 
 requires:
-  - /Locale
+  - Locale
 
 provides: [Locale.zh-CH.Date]
 
@@ -13273,8 +14250,8 @@ authors:
   - YMind Chan
 
 requires:
-  - /Locale
-  - /Form.Validator
+  - Locale
+  - Form.Validator
 
 provides: [Form.zh-CH.Form.Validator, Form.Validator.CurrencyYuanValidator]
 
@@ -13309,7 +14286,7 @@ Locale.define('zh-CHS', 'FormValidator', {
 	match: '必须与{matchName}相匹配',
 	startDate: '起始日期',
 	endDate: '结束日期',
-	currendDate: '当前日期',
+	currentDate: '当前日期',
 	afterDate: '日期必须等于或晚于 {label}.',
 	beforeDate: '日期必须早于或等于 {label}.',
 	startMonth: '请选择起始月份',
@@ -13346,7 +14323,7 @@ Locale.define('zh-CHT', 'FormValidator', {
 	match: '必須與{matchName}相匹配',
 	startDate: '起始日期',
 	endDate: '結束日期',
-	currendDate: '當前日期',
+	currentDate: '當前日期',
 	afterDate: '日期必須等於或晚於{label}.',
 	beforeDate: '日期必須早於或等於{label}.',
 	startMonth: '請選擇起始月份',
@@ -13368,6 +14345,98 @@ Form.Validator.add('validate-currency-yuan', {
 		// [￥].##
 		return Form.Validator.getValidator('IsEmpty').test(element) || (/^￥?\-?([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}\d*(\.[0-9]{0,2})?|0(\.[0-9]{0,2})?|(\.[0-9]{1,2})?)$/).test(element.get('value'));
 	}
+
+});
+
+
+/*
+---
+
+name: Locale.zh-CH.Number
+
+description: Number messages for for Chinese (simplified and traditional).
+
+license: MIT-style license
+
+authors:
+  - YMind Chan
+
+requires:
+  - Locale
+  - Locale.en-US.Number
+
+provides: [Locale.zh-CH.Number]
+
+...
+*/
+
+// Simplified Chinese
+Locale.define('zh-CHS', 'Number', {
+
+	currency: {
+		prefix: '￥ '
+	}
+
+}).inherit('en-US', 'Number');
+
+// Traditional Chinese
+Locale.define('zh-CHT').inherit('zh-CHS', 'Number');
+
+
+/*
+---
+
+name: Locale.el-GR.Form.Validator
+
+description: Form Validator messages for Greek language.
+
+license: MIT-style license
+
+authors:
+  - Dimitris Tsironis
+
+requires:
+  - Locale
+
+provides: [Locale.el-GR.Form.Validator]
+
+...
+*/
+
+Locale.define('el-GR', 'FormValidator', {
+
+    required: 'Αυτό το πεδίο είναι απαραίτητο.',
+    length: 'Παρακαλούμε, εισάγετε {length} χαρακτήρες (έχετε ήδη εισάγει {elLength} χαρακτήρες).',
+    minLength: 'Παρακαλούμε, εισάγετε τουλάχιστον {minLength} χαρακτήρες (έχετε ήδη εισάγε {length} χαρακτήρες).',
+    maxlength: 'Παρακαλούμε, εισάγετε εώς {maxlength} χαρακτήρες (έχετε ήδη εισάγε {length} χαρακτήρες).',
+    integer: 'Παρακαλούμε, εισάγετε έναν ακέραιο αριθμό σε αυτό το πεδίο. Οι αριθμοί με δεκαδικά ψηφία (π.χ. 1.25) δεν επιτρέπονται.',
+    numeric: 'Παρακαλούμε, εισάγετε μόνο αριθμητικές τιμές σε αυτό το πεδίο (π.χ." 1 " ή " 1.1 " ή " -1 " ή " -1.1 " ).',
+    digits: 'Παρακαλούμε, χρησιμοποιήστε μόνο αριθμούς και σημεία στίξης σε αυτόν τον τομέα (π.χ. επιτρέπεται αριθμός τηλεφώνου με παύλες ή τελείες).',
+    alpha: 'Παρακαλούμε, χρησιμοποιήστε μόνο γράμματα (a-z) σε αυτό το πεδίο. Δεν επιτρέπονται κενά ή άλλοι χαρακτήρες.',
+    alphanum: 'Παρακαλούμε, χρησιμοποιήστε μόνο γράμματα (a-z) ή αριθμούς (0-9) σε αυτόν τον τομέα. Δεν επιτρέπονται κενά ή άλλοι χαρακτήρες.',
+    dateSuchAs: 'Παρακαλούμε, εισάγετε μια έγκυρη ημερομηνία, όπως {date}',
+    dateInFormatMDY: 'Παρακαλώ εισάγετε μια έγκυρη ημερομηνία, όπως ΜΜ/ΗΗ/ΕΕΕΕ (π.χ. "12/31/1999").',
+    email: 'Παρακαλούμε, εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου (π.χ. "fred@domain.com").',
+    url: 'Παρακαλούμε, εισάγετε μια έγκυρη URL διεύθυνση, όπως http://www.example.com',
+    currencyDollar: 'Παρακαλούμε, εισάγετε ένα έγκυρο ποσό σε δολλάρια (π.χ. $100.00).',
+    oneRequired: 'Παρακαλούμε, εισάγετε κάτι για τουλάχιστον ένα από αυτά τα πεδία.',
+    errorPrefix: 'Σφάλμα: ',
+    warningPrefix: 'Προσοχή: ',
+
+    // Form.Validator.Extras
+    noSpace: 'Δεν επιτρέπονται τα κενά σε αυτό το πεδίο.',
+    reqChkByNode: 'Δεν έχει επιλεγεί κάποιο αντικείμενο',
+    requiredChk: 'Αυτό το πεδίο είναι απαραίτητο.',
+    reqChkByName: 'Παρακαλούμε, επιλέξτε μια ετικέτα {label}.',
+    match: 'Αυτό το πεδίο πρέπει να ταιριάζει με το πεδίο {matchName}.',
+    startDate: 'η ημερομηνία έναρξης',
+    endDate: 'η ημερομηνία λήξης',
+    currentDate: 'η τρέχουσα ημερομηνία',
+    afterDate: 'Η ημερομηνία πρέπει να είναι η ίδια ή μετά από την {label}.',
+    beforeDate: 'Η ημερομηνία πρέπει να είναι η ίδια ή πριν από την {label}.',
+    startMonth: 'Παρακαλώ επιλέξτε ένα μήνα αρχής.',
+    sameMonth: 'Αυτές οι δύο ημερομηνίες πρέπει να έχουν τον ίδιο μήνα - θα πρέπει να αλλάξετε ή το ένα ή το άλλο',
+    creditcard: 'Ο αριθμός της πιστωτικής κάρτας δεν είναι έγκυρος. Παρακαλούμε ελέγξτε τον αριθμό και δοκιμάστε ξανά. {length} μήκος ψηφίων.'
 
 });
 
