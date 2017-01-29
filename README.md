@@ -4,8 +4,8 @@ MooTools! For Rails! So great.
 
 This gem provides:
 
-  * MooTools 1.4.5
-  * MooTools More 1.4.0.1
+  * MooTools 1.5.0
+  * MooTools More 1.5.0
   * the MooTools UJS adapter
   * assert_select_mootools to test MooTools responses in Ruby tests
 

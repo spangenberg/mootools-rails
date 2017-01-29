@@ -9,7 +9,7 @@ authors:
 - Oskar Krawczyk
 
 requires:
-  core/1.4: '*'
+  core/1.5: '*'
 
 provides:
   - Rails 3 MooTools driver

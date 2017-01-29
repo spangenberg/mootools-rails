@@ -600,7 +600,9 @@ var Locale = this.Locale = {
 
 		if (set) locale.define(set, key, value);
 
-		
+		/*<1.2compat>*/
+		if (set == 'cascade') return Locale.inherit(name, key);
+		/*</1.2compat>*/
 
 		if (!current) current = locale;
 
@@ -615,7 +617,9 @@ var Locale = this.Locale = {
 
 			this.fireEvent('change', locale);
 
-			
+			/*<1.2compat>*/
+			this.fireEvent('langChange', locale.name);
+			/*</1.2compat>*/
 		}
 
 		return this;
@@ -712,7 +716,25 @@ Locale.Set = new Class({
 
 });
 
+/*<1.2compat>*/
+var lang = MooTools.lang = {};
 
+Object.append(lang, Locale, {
+	setLanguage: Locale.use,
+	getCurrentLanguage: function(){
+		var current = Locale.getCurrent();
+		return (current) ? current.name : null;
+	},
+	set: function(){
+		Locale.define.apply(this, arguments);
+		return this;
+	},
+	get: function(set, key, args){
+		if (key) set += '.' + key;
+		return Locale.get(set, args);
+	}
+});
+/*</1.2compat>*/
 
 })();
 
@@ -1194,7 +1216,9 @@ Date.extend({
 		return this;
 	},
 
-	
+	//<1.2compat>
+	parsePatterns: parsePatterns,
+	//</1.2compat>
 
 	defineParser: function(pattern){
 		parsePatterns.push((pattern.re && pattern.handler) ? pattern : build(pattern));
@@ -2706,7 +2730,10 @@ Element.implement({
 	},
 
 	getComputedSize: function(options){
-		
+		//<1.2compat>
+		//legacy support for my stupid spelling error
+		if (options && options.plains) options.planes = options.plains;
+		//</1.2compat>
 
 		options = Object.merge({
 			styles: ['padding','border'],
@@ -2886,7 +2913,9 @@ provides: [Element.Pin]
 
 	});
 
-
+//<1.2compat>
+Element.alias('togglepin', 'togglePin');
+//</1.2compat>
 
 })();
 
@@ -3238,7 +3267,9 @@ provides: [IframeShim]
 (function(){
 
 var browsers = false;
-
+//<1.4compat>
+browsers = Browser.ie6 || (Browser.firefox && Browser.version < 3 && Browser.Platform.mac);
+//</1.4compat>
 
 this.IframeShim = new Class({
 
@@ -4914,7 +4945,10 @@ Element.implement({
 });
 
 
-
+//<1.2compat>
+//legacy
+var FormValidator = Form.Validator;
+//</1.2compat>
 
 
 
@@ -5887,7 +5921,39 @@ Fx.Accordion = new Class({
 
 });
 
+/*<1.2compat>*/
+/*
+	Compatibility with 1.2.0
+*/
+var Accordion = new Class({
 
+	Extends: Fx.Accordion,
+
+	initialize: function(){
+		this.parent.apply(this, arguments);
+		var params = Array.link(arguments, {'container': Type.isElement});
+		this.container = params.container;
+	},
+
+	addSection: function(toggler, element, pos){
+		toggler = document.id(toggler);
+		element = document.id(element);
+
+		var test = this.togglers.contains(toggler);
+		var len = this.togglers.length;
+		if (len && (!test || pos)){
+			pos = pos != null ? pos : len - 1;
+			toggler.inject(this.togglers[pos], 'before');
+			element.inject(toggler, 'after');
+		} else if (this.container && !test){
+			toggler.inject(this.container);
+			element.inject(this.container);
+		}
+		return this.parent.apply(this, arguments);
+	}
+
+});
+/*</1.2compat>*/
 
 
 /*
@@ -6126,7 +6192,16 @@ Fx.Scroll = new Class({
 
 });
 
-
+//<1.2compat>
+Fx.Scroll.implement({
+	scrollToCenter: function(){
+		return this.toElementCenter.apply(this, arguments);
+	},
+	scrollIntoView: function(){
+		return this.toElementEdge.apply(this, arguments);
+	}
+});
+//</1.2compat>
 
 function isBody(element){
 	return (/^(?:body|html)$/i).test(element.tagName);
@@ -6330,7 +6405,7 @@ provides: [Fx.SmoothScroll]
 ...
 */
 
-Fx.SmoothScroll = new Class({
+/*<1.2compat>*/var SmoothScroll = /*</1.2compat>*/Fx.SmoothScroll = new Class({
 
 	Extends: Fx.Scroll,
 
@@ -7270,7 +7345,11 @@ var Sortables = new Class({
 		revert: false,
 		handle: false,
 		dragOptions: {},
-		unDraggableTags: ['button', 'input', 'a', 'textarea', 'select', 'option']
+		unDraggableTags: ['button', 'input', 'a', 'textarea', 'select', 'option']/*<1.2compat>*/,
+		snap: 4,
+		constrain: false,
+		preventDefault: false
+		/*</1.2compat>*/
 	},
 
 	initialize: function(lists, options){
@@ -7409,7 +7488,11 @@ var Sortables = new Class({
 		this.clone = this.getClone(event, element);
 
 		this.drag = new Drag.Move(this.clone, Object.merge({
-			
+			/*<1.2compat>*/
+			preventDefault: this.options.preventDefault,
+			snap: this.options.snap,
+			container: this.options.constrain && this.element.getParent(),
+			/*</1.2compat>*/
 			droppables: this.getDroppables()
 		}, this.options.dragOptions)).addEvents({
 			onSnap: function(){
@@ -9057,7 +9140,9 @@ HtmlTable.Parsers = {
 
 };
 
-
+//<1.2compat>
+HtmlTable.Parsers = new Hash(HtmlTable.Parsers);
+//</1.2compat>
 
 HtmlTable.defineParsers = function(parsers){
 	HtmlTable.Parsers = Object.append(HtmlTable.Parsers, parsers);
@@ -13356,7 +13441,11 @@ Locale.define('ru-RU', 'Date', {
 
 });
 
+//<1.2compat>
 
+Locale.define('ru-RU-unicode').inherit('ru-RU', 'Date');
+
+//</1.2compat>
 
 })();
 
@@ -13402,7 +13491,11 @@ Locale.define('ru-RU', 'FormValidator', {
 
 });
 
+//<1.2compat>
 
+Locale.define('ru-RU-unicode').inherit('ru-RU', 'FormValidator');
+
+//</1.2compat>
 
 
 /*
